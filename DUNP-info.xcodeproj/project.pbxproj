@@ -3,23 +3,94 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8274C0CA00A0306B2A054DAA /* Pods_DUNP_info.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA26BF83866CE99C04BC11D /* Pods_DUNP_info.framework */; };
+		9C1805682577DC53003DAF4E /* TabNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1805672577DC53003DAF4E /* TabNav.swift */; };
+		9C18056C2577E26C003DAF4E /* DepItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18056B2577E26C003DAF4E /* DepItem.swift */; };
+		9C18056F2577E4E0003DAF4E /* DepItemSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18056E2577E4E0003DAF4E /* DepItemSelected.swift */; };
+		9C18057225780066003DAF4E /* CourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18057125780066003DAF4E /* CourseItem.swift */; };
+		9C180575257800DF003DAF4E /* CourseItemSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C180574257800DF003DAF4E /* CourseItemSelected.swift */; };
+		9C3A5A1A259DE9340066AA05 /* ExamsDep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A5A19259DE9340066AA05 /* ExamsDep.swift */; };
+		9C3A5A1E259DF3F60066AA05 /* ExamsDepItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A5A1D259DF3F60066AA05 /* ExamsDepItem.swift */; };
+		9C3A5A21259DF8690066AA05 /* ExamsCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A5A20259DF8690066AA05 /* ExamsCourseItem.swift */; };
+		9C3A5A24259DF8A90066AA05 /* ExamsCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A5A23259DF8A90066AA05 /* ExamsCourses.swift */; };
+		9C3A5A27259DFC2F0066AA05 /* ExamSubjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A5A26259DFC2F0066AA05 /* ExamSubjects.swift */; };
+		9C3A5A2A259DFC900066AA05 /* ExamsSubjectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A5A29259DFC900066AA05 /* ExamsSubjectItem.swift */; };
+		9C41BCD1255F267D00C45C5D /* FifthTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41BCD0255F267D00C45C5D /* FifthTutorial.swift */; };
+		9C41BCD4255F412A00C45C5D /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41BCD3255F412A00C45C5D /* UserInfo.swift */; };
+		9C4B80622587F29A005D4137 /* ExamsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B80612587F29A005D4137 /* ExamsData.swift */; };
+		9C56D04F255D77620090BCD8 /* ForthTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56D04E255D77620090BCD8 /* ForthTutorial.swift */; };
+		9C5F92612562EB8A0079C693 /* SixthTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F92602562EB8A0079C693 /* SixthTutorial.swift */; };
+		9C5F92642562F3260079C693 /* SeventhTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F92632562F3260079C693 /* SeventhTutorial.swift */; };
+		9C5F9268256323E40079C693 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F9267256323E40079C693 /* News.swift */; };
+		9C5F926C256326E60079C693 /* NewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F926B256326E60079C693 /* NewsFetcher.swift */; };
+		9C7FEEFE2572E0D500A12B46 /* NewsLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FEEFD2572E0D500A12B46 /* NewsLink.swift */; };
+		9C8168A12579230C00DC452D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8168A02579230C00DC452D /* Settings.swift */; };
 		9CA104A025532BE9002969FE /* DUNP_infoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1049F25532BE9002969FE /* DUNP_infoApp.swift */; };
 		9CA104A225532BE9002969FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA104A125532BE9002969FE /* ContentView.swift */; };
 		9CA104A425532BEC002969FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA104A325532BEC002969FE /* Assets.xcassets */; };
 		9CA104A725532BEC002969FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA104A625532BEC002969FE /* Preview Assets.xcassets */; };
+		9CA104B12553335A002969FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CA104B02553335A002969FE /* GoogleService-Info.plist */; };
+		9CB38369257E72CA0010F1E1 /* NewsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB38368257E72CA0010F1E1 /* NewsSearch.swift */; };
+		9CC134D725608DD000C2F650 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC134D625608DD000C2F650 /* Student.swift */; };
+		9CD3CB57257AC6A800804EC8 /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3CB56257AC6A800804EC8 /* LinkView.swift */; };
+		9CDF3FA2255C0F2C00AC8109 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF3FA1255C0F2C00AC8109 /* TutorialView.swift */; };
+		9CDF3FA5255C138B00AC8109 /* SecondTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF3FA4255C138B00AC8109 /* SecondTutorial.swift */; };
+		9CDF3FA8255C2D1100AC8109 /* ThirdTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF3FA7255C2D1100AC8109 /* ThirdTutorial.swift */; };
+		9CDF3FAC255C2E9A00AC8109 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF3FAB255C2E9A00AC8109 /* Department.swift */; };
+		9CDF3FB0255C2FFF00AC8109 /* Department_list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF3FAF255C2FFF00AC8109 /* Department_list.swift */; };
+		9CF4CEF625646BFE00909B59 /* NewsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4CEF525646BFE00909B59 /* NewsListItem.swift */; };
+		9CFED2E2255AD80E00829955 /* FirstTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFED2E1255AD80E00829955 /* FirstTutorial.swift */; };
+		9CFED2E5255B458900829955 /* TutorialHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFED2E4255B458900829955 /* TutorialHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00FF32BF813BF30FCD96F2D9 /* Pods-DUNP-info.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DUNP-info.debug.xcconfig"; path = "Target Support Files/Pods-DUNP-info/Pods-DUNP-info.debug.xcconfig"; sourceTree = "<group>"; };
+		1E50CCBE1BAA779112CE2AD5 /* Pods-DUNP-info.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DUNP-info.release.xcconfig"; path = "Target Support Files/Pods-DUNP-info/Pods-DUNP-info.release.xcconfig"; sourceTree = "<group>"; };
+		9C1805672577DC53003DAF4E /* TabNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNav.swift; sourceTree = "<group>"; };
+		9C18056B2577E26C003DAF4E /* DepItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepItem.swift; sourceTree = "<group>"; };
+		9C18056E2577E4E0003DAF4E /* DepItemSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepItemSelected.swift; sourceTree = "<group>"; };
+		9C18057125780066003DAF4E /* CourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem.swift; sourceTree = "<group>"; };
+		9C180574257800DF003DAF4E /* CourseItemSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItemSelected.swift; sourceTree = "<group>"; };
+		9C3A5A19259DE9340066AA05 /* ExamsDep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsDep.swift; sourceTree = "<group>"; };
+		9C3A5A1D259DF3F60066AA05 /* ExamsDepItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsDepItem.swift; sourceTree = "<group>"; };
+		9C3A5A20259DF8690066AA05 /* ExamsCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsCourseItem.swift; sourceTree = "<group>"; };
+		9C3A5A23259DF8A90066AA05 /* ExamsCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsCourses.swift; sourceTree = "<group>"; };
+		9C3A5A26259DFC2F0066AA05 /* ExamSubjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSubjects.swift; sourceTree = "<group>"; };
+		9C3A5A29259DFC900066AA05 /* ExamsSubjectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsSubjectItem.swift; sourceTree = "<group>"; };
+		9C41BCD0255F267D00C45C5D /* FifthTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthTutorial.swift; sourceTree = "<group>"; };
+		9C41BCD3255F412A00C45C5D /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		9C4B80612587F29A005D4137 /* ExamsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsData.swift; sourceTree = "<group>"; };
+		9C56D04E255D77620090BCD8 /* ForthTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForthTutorial.swift; sourceTree = "<group>"; };
+		9C5F92602562EB8A0079C693 /* SixthTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthTutorial.swift; sourceTree = "<group>"; };
+		9C5F92632562F3260079C693 /* SeventhTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeventhTutorial.swift; sourceTree = "<group>"; };
+		9C5F9267256323E40079C693 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		9C5F926B256326E60079C693 /* NewsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFetcher.swift; sourceTree = "<group>"; };
+		9C7FEEFD2572E0D500A12B46 /* NewsLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLink.swift; sourceTree = "<group>"; };
+		9C8168A02579230C00DC452D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9CA1049C25532BE9002969FE /* DUNP-info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DUNP-info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA1049F25532BE9002969FE /* DUNP_infoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DUNP_infoApp.swift; sourceTree = "<group>"; };
 		9CA104A125532BE9002969FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9CA104A325532BEC002969FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CA104A625532BEC002969FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9CA104A825532BEC002969FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CA104B02553335A002969FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9CA104B5255334C9002969FE /* DUNP-info.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DUNP-info.entitlements"; sourceTree = "<group>"; };
+		9CB38368257E72CA0010F1E1 /* NewsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearch.swift; sourceTree = "<group>"; };
+		9CC134D625608DD000C2F650 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		9CD3CB56257AC6A800804EC8 /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
+		9CDF3FA1255C0F2C00AC8109 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		9CDF3FA4255C138B00AC8109 /* SecondTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTutorial.swift; sourceTree = "<group>"; };
+		9CDF3FA7255C2D1100AC8109 /* ThirdTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTutorial.swift; sourceTree = "<group>"; };
+		9CDF3FAB255C2E9A00AC8109 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		9CDF3FAF255C2FFF00AC8109 /* Department_list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department_list.swift; sourceTree = "<group>"; };
+		9CF4CEF525646BFE00909B59 /* NewsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListItem.swift; sourceTree = "<group>"; };
+		9CFED2E1255AD80E00829955 /* FirstTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTutorial.swift; sourceTree = "<group>"; };
+		9CFED2E4255B458900829955 /* TutorialHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialHeader.swift; sourceTree = "<group>"; };
+		EBA26BF83866CE99C04BC11D /* Pods_DUNP_info.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DUNP_info.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +98,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8274C0CA00A0306B2A054DAA /* Pods_DUNP_info.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		531566C385904B618CD1440E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00FF32BF813BF30FCD96F2D9 /* Pods-DUNP-info.debug.xcconfig */,
+				1E50CCBE1BAA779112CE2AD5 /* Pods-DUNP-info.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		84FDFC87AC02B410FC476985 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBA26BF83866CE99C04BC11D /* Pods_DUNP_info.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C218C4A257587620064CE96 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				9C1805672577DC53003DAF4E /* TabNav.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		9C3A5A18259DE8F60066AA05 /* Exams */ = {
+			isa = PBXGroup;
+			children = (
+				9C3A5A19259DE9340066AA05 /* ExamsDep.swift */,
+				9C3A5A23259DF8A90066AA05 /* ExamsCourses.swift */,
+				9C3A5A26259DFC2F0066AA05 /* ExamSubjects.swift */,
+			);
+			path = Exams;
+			sourceTree = "<group>";
+		};
+		9C5F9266256323D40079C693 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F9267256323E40079C693 /* News.swift */,
+				9C8168A02579230C00DC452D /* Settings.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		9CA1049325532BE9002969FE = {
 			isa = PBXGroup;
 			children = (
 				9CA1049E25532BE9002969FE /* DUNP-info */,
 				9CA1049D25532BE9002969FE /* Products */,
+				531566C385904B618CD1440E /* Pods */,
+				84FDFC87AC02B410FC476985 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,10 +170,18 @@
 		9CA1049E25532BE9002969FE /* DUNP-info */ = {
 			isa = PBXGroup;
 			children = (
+				9C3A5A18259DE8F60066AA05 /* Exams */,
+				9C218C4A257587620064CE96 /* Navigation */,
+				9CF4CEF425646BD200909B59 /* Components */,
+				9C5F9266256323D40079C693 /* Main */,
+				9CDF3FAA255C2E4900AC8109 /* Data */,
+				9CFED2E0255AD7DF00829955 /* Tutorials */,
+				9CA104B5255334C9002969FE /* DUNP-info.entitlements */,
 				9CA1049F25532BE9002969FE /* DUNP_infoApp.swift */,
 				9CA104A125532BE9002969FE /* ContentView.swift */,
 				9CA104A325532BEC002969FE /* Assets.xcassets */,
 				9CA104A825532BEC002969FE /* Info.plist */,
+				9CA104B02553335A002969FE /* GoogleService-Info.plist */,
 				9CA104A525532BEC002969FE /* Preview Content */,
 			);
 			path = "DUNP-info";
@@ -69,6 +195,53 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9CDF3FAA255C2E4900AC8109 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9CDF3FAB255C2E9A00AC8109 /* Department.swift */,
+				9CDF3FAF255C2FFF00AC8109 /* Department_list.swift */,
+				9C41BCD3255F412A00C45C5D /* UserInfo.swift */,
+				9CC134D625608DD000C2F650 /* Student.swift */,
+				9C5F926B256326E60079C693 /* NewsFetcher.swift */,
+				9C4B80612587F29A005D4137 /* ExamsData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9CF4CEF425646BD200909B59 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9CF4CEF525646BFE00909B59 /* NewsListItem.swift */,
+				9C7FEEFD2572E0D500A12B46 /* NewsLink.swift */,
+				9C18056B2577E26C003DAF4E /* DepItem.swift */,
+				9C18056E2577E4E0003DAF4E /* DepItemSelected.swift */,
+				9C18057125780066003DAF4E /* CourseItem.swift */,
+				9C180574257800DF003DAF4E /* CourseItemSelected.swift */,
+				9CD3CB56257AC6A800804EC8 /* LinkView.swift */,
+				9CB38368257E72CA0010F1E1 /* NewsSearch.swift */,
+				9C3A5A1D259DF3F60066AA05 /* ExamsDepItem.swift */,
+				9C3A5A20259DF8690066AA05 /* ExamsCourseItem.swift */,
+				9C3A5A29259DFC900066AA05 /* ExamsSubjectItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9CFED2E0255AD7DF00829955 /* Tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				9CFED2E1255AD80E00829955 /* FirstTutorial.swift */,
+				9CFED2E4255B458900829955 /* TutorialHeader.swift */,
+				9CDF3FA1255C0F2C00AC8109 /* TutorialView.swift */,
+				9CDF3FA4255C138B00AC8109 /* SecondTutorial.swift */,
+				9CDF3FA7255C2D1100AC8109 /* ThirdTutorial.swift */,
+				9C56D04E255D77620090BCD8 /* ForthTutorial.swift */,
+				9C41BCD0255F267D00C45C5D /* FifthTutorial.swift */,
+				9C5F92602562EB8A0079C693 /* SixthTutorial.swift */,
+				9C5F92632562F3260079C693 /* SeventhTutorial.swift */,
+			);
+			path = Tutorials;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CA104AB25532BEC002969FE /* Build configuration list for PBXNativeTarget "DUNP-info" */;
 			buildPhases = (
+				0CEB2F92108C8FDA5892397D /* [CP] Check Pods Manifest.lock */,
 				9CA1049825532BE9002969FE /* Sources */,
 				9CA1049925532BE9002969FE /* Frameworks */,
 				9CA1049A25532BE9002969FE /* Resources */,
+				F715468829496662344BA23E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,18 +303,93 @@
 			files = (
 				9CA104A725532BEC002969FE /* Preview Assets.xcassets in Resources */,
 				9CA104A425532BEC002969FE /* Assets.xcassets in Resources */,
+				9CA104B12553335A002969FE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CEB2F92108C8FDA5892397D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DUNP-info-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F715468829496662344BA23E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DUNP-info/Pods-DUNP-info-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DUNP-info/Pods-DUNP-info-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DUNP-info/Pods-DUNP-info-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9CA1049825532BE9002969FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CFED2E5255B458900829955 /* TutorialHeader.swift in Sources */,
 				9CA104A225532BE9002969FE /* ContentView.swift in Sources */,
+				9C3A5A1A259DE9340066AA05 /* ExamsDep.swift in Sources */,
+				9C3A5A1E259DF3F60066AA05 /* ExamsDepItem.swift in Sources */,
+				9C5F9268256323E40079C693 /* News.swift in Sources */,
+				9CB38369257E72CA0010F1E1 /* NewsSearch.swift in Sources */,
+				9C5F926C256326E60079C693 /* NewsFetcher.swift in Sources */,
+				9C1805682577DC53003DAF4E /* TabNav.swift in Sources */,
+				9C3A5A2A259DFC900066AA05 /* ExamsSubjectItem.swift in Sources */,
 				9CA104A025532BE9002969FE /* DUNP_infoApp.swift in Sources */,
+				9CF4CEF625646BFE00909B59 /* NewsListItem.swift in Sources */,
+				9CDF3FB0255C2FFF00AC8109 /* Department_list.swift in Sources */,
+				9C41BCD4255F412A00C45C5D /* UserInfo.swift in Sources */,
+				9C8168A12579230C00DC452D /* Settings.swift in Sources */,
+				9CD3CB57257AC6A800804EC8 /* LinkView.swift in Sources */,
+				9C5F92642562F3260079C693 /* SeventhTutorial.swift in Sources */,
+				9C3A5A24259DF8A90066AA05 /* ExamsCourses.swift in Sources */,
+				9C3A5A21259DF8690066AA05 /* ExamsCourseItem.swift in Sources */,
+				9C18057225780066003DAF4E /* CourseItem.swift in Sources */,
+				9CDF3FA2255C0F2C00AC8109 /* TutorialView.swift in Sources */,
+				9C56D04F255D77620090BCD8 /* ForthTutorial.swift in Sources */,
+				9CC134D725608DD000C2F650 /* Student.swift in Sources */,
+				9C18056C2577E26C003DAF4E /* DepItem.swift in Sources */,
+				9C3A5A27259DFC2F0066AA05 /* ExamSubjects.swift in Sources */,
+				9C7FEEFE2572E0D500A12B46 /* NewsLink.swift in Sources */,
+				9C18056F2577E4E0003DAF4E /* DepItemSelected.swift in Sources */,
+				9C41BCD1255F267D00C45C5D /* FifthTutorial.swift in Sources */,
+				9CFED2E2255AD80E00829955 /* FirstTutorial.swift in Sources */,
+				9CDF3FA8255C2D1100AC8109 /* ThirdTutorial.swift in Sources */,
+				9C180575257800DF003DAF4E /* CourseItemSelected.swift in Sources */,
+				9CDF3FA5255C138B00AC8109 /* SecondTutorial.swift in Sources */,
+				9C5F92612562EB8A0079C693 /* SixthTutorial.swift in Sources */,
+				9C4B80622587F29A005D4137 /* ExamsData.swift in Sources */,
+				9CDF3FAC255C2E9A00AC8109 /* Department.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,10 +514,13 @@
 		};
 		9CA104AC25532BEC002969FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00FF32BF813BF30FCD96F2D9 /* Pods-DUNP-info.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "DUNP-info/DUNP-info.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"DUNP-info/Preview Content\"";
 				DEVELOPMENT_TEAM = SQR9V74595;
 				ENABLE_PREVIEWS = YES;
@@ -279,17 +532,21 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.edindolicanin.DUNP-info";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Duno-info Profile";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		9CA104AD25532BEC002969FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E50CCBE1BAA779112CE2AD5 /* Pods-DUNP-info.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "DUNP-info/DUNP-info.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"DUNP-info/Preview Content\"";
 				DEVELOPMENT_TEAM = SQR9V74595;
 				ENABLE_PREVIEWS = YES;
@@ -301,8 +558,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.edindolicanin.DUNP-info";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Duno-info Profile";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

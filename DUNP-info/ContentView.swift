@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var settings: finishedTutorial = .shared
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if(settings.isOver) {
+            TabNav() }
+        else {
+            TutorialView()
+        }
     }
 }
 
@@ -19,3 +23,11 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+class finishedTutorial: ObservableObject {
+    private init() {}
+    static let shared = finishedTutorial()
+    @Published var isOver = getFinished()
+}
+

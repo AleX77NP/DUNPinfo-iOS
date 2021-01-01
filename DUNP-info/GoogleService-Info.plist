@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>625558782710-c4cnffjb0v5cbof59mub82f1a4o3o3sg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.625558782710-c4cnffjb0v5cbof59mub82f1a4o3o3sg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBcZmFuUbQl5PcL3JG-g5zR9BR8eqNgwWM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>625558782710</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.edindolicanin.DUNP-info</string>
+	<key>PROJECT_ID</key>
+	<string>dunp-info</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dunp-info.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:625558782710:ios:507c7ac36296359c1ea2d7</string>
+	<key>DATABASE_URL</key>
+	<string>https://dunp-info.firebaseio.com</string>
+</dict>
+</plist>
