@@ -83,6 +83,5 @@ struct ThirdTutorial: View {
                 
             }.listStyle(InsetListStyle())
         }
-            
     }
 }

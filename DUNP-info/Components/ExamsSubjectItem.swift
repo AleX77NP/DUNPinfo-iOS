@@ -13,9 +13,9 @@ struct ExamsSubjectItem: View {
     var predmet: SmerPredmet
     
     var body: some View {
-        NavigationLink(destination: Text("Rokovi")){
+        NavigationLink(destination: ExamsDocs(predmet: predmet.predmet)){
             HStack{
-            Text(predmet.naziv_predmeta)
+                Text(predmet.naziv_predmeta)
                 .font(Font.custom("Roboto",fixedSize: 16)).padding().foregroundColor(.primary)
                 Spacer()
             }.border(Color.gray, width: 2)

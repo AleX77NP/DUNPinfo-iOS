@@ -18,7 +18,11 @@ struct ExamsSubjects: View {
             List(self.godine, id: \.self) { godina in
                 Section{
                 VStack{
-                    Text(String(godina) + ". Godina").frame(alignment: .center)
+                    HStack{
+                    Spacer()
+                        Text(String(godina) + ". Godina").frame(alignment: .center).padding().font(Font.custom("Roboto",fixedSize: 18))
+                    Spacer()
+                    }
                 ScrollView{
                 ForEach(grupaPredmeta(predmeti: self.predmeti, god: godina), id: \.self) { pred in
                 ExamsSubjectItem(predmet: pred)
