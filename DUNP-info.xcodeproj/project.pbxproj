@@ -24,6 +24,7 @@
 		9C3A5A2A259DFC900066AA05 /* ExamsSubjectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A5A29259DFC900066AA05 /* ExamsSubjectItem.swift */; };
 		9C41BCD1255F267D00C45C5D /* FifthTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41BCD0255F267D00C45C5D /* FifthTutorial.swift */; };
 		9C41BCD4255F412A00C45C5D /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41BCD3255F412A00C45C5D /* UserInfo.swift */; };
+		9C49F4B425AC659A0059C684 /* ExamChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C49F4B325AC659A0059C684 /* ExamChoice.swift */; };
 		9C4B80622587F29A005D4137 /* ExamsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B80612587F29A005D4137 /* ExamsData.swift */; };
 		9C56D04F255D77620090BCD8 /* ForthTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56D04E255D77620090BCD8 /* ForthTutorial.swift */; };
 		9C5F92612562EB8A0079C693 /* SixthTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F92602562EB8A0079C693 /* SixthTutorial.swift */; };
@@ -69,6 +70,7 @@
 		9C3A5A29259DFC900066AA05 /* ExamsSubjectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsSubjectItem.swift; sourceTree = "<group>"; };
 		9C41BCD0255F267D00C45C5D /* FifthTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthTutorial.swift; sourceTree = "<group>"; };
 		9C41BCD3255F412A00C45C5D /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		9C49F4B325AC659A0059C684 /* ExamChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamChoice.swift; sourceTree = "<group>"; };
 		9C4B80612587F29A005D4137 /* ExamsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsData.swift; sourceTree = "<group>"; };
 		9C56D04E255D77620090BCD8 /* ForthTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForthTutorial.swift; sourceTree = "<group>"; };
 		9C5F92602562EB8A0079C693 /* SixthTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthTutorial.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				9C3A5A26259DFC2F0066AA05 /* ExamSubjects.swift */,
 				9C31533E25AB1C2A00FB80C1 /* ExamsDocs.swift */,
 				9C31534125AB30CC00FB80C1 /* IRItem.swift */,
+				9C49F4B325AC659A0059C684 /* ExamChoice.swift */,
 			);
 			path = Exams;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				9CA104A025532BE9002969FE /* DUNP_infoApp.swift in Sources */,
 				9CF4CEF625646BFE00909B59 /* NewsListItem.swift in Sources */,
 				9CDF3FB0255C2FFF00AC8109 /* Department_list.swift in Sources */,
+				9C49F4B425AC659A0059C684 /* ExamChoice.swift in Sources */,
 				9C31534225AB30CC00FB80C1 /* IRItem.swift in Sources */,
 				9C41BCD4255F412A00C45C5D /* UserInfo.swift in Sources */,
 				9C8168A12579230C00DC452D /* Settings.swift in Sources */,

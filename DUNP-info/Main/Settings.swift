@@ -24,7 +24,6 @@ struct Settings : View {
     
     var body: some View {
         NavigationView{
-            ZStack{
         VStack {
             ScrollView{
             VStack {
@@ -32,7 +31,7 @@ struct Settings : View {
                 Text("Izmena departmana").font(Font.custom("Ubuntu", fixedSize: 21))
                     .bold()
                     .padding()
-                    .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
+                  //  .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
                     Spacer()
                 }
                 Text("Ovde možete da izmenite podešavanja za departmane za koje primate obaveštenja.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.primary)
@@ -68,7 +67,7 @@ struct Settings : View {
                 Text("Izmena smerova").font(Font.custom("Ubuntu", fixedSize: 21))
                     .bold()
                     .padding()
-                    .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
+                  //  .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
                     Spacer()
                 }
                 Text("Ovde možete da izmenite podešavanja za smerove za koje primate obaveštenja.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.primary)
@@ -104,7 +103,7 @@ struct Settings : View {
                 Text("Izmena tipova novosti").font(Font.custom("Ubuntu", fixedSize: 21))
                     .bold()
                     .padding()
-                    .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
+                   // .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
                     Spacer()
                 }
                 Text("Ovde možete da izmenite podešavanja za tipove novosti za koje primate obaveštenja.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.primary)
@@ -141,7 +140,7 @@ struct Settings : View {
                     Text("Reset podataka").font(Font.custom("Ubuntu", fixedSize: 21))
                         .bold()
                         .padding()
-                        .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
+                      //  .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
                         Spacer()
                     }
                     Text("Ovde možete da uradite potpuni reset podataka, nakon čega je neophodno podesiti aplikaciju iznova.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.primary)
@@ -171,12 +170,11 @@ struct Settings : View {
                 
                 
                 
-        }
-             }
-            }.navigationTitle("Podešavanja")
+                }
+        }.navigationTitle("Podešavanja").navigationViewStyle(StackNavigationViewStyle())
+            }
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Reset podataka"), message: Text("Da li ste sigurni da želite da uradite potpuni reset aplikacije?"))
             }
-        }
     }
 }

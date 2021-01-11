@@ -23,7 +23,7 @@ struct TabNav: View {
                     Text("Ispitni rokovi")
                 }.tag(1)
             
-            Text("Dodaj ispitni rok")
+            ExamChoice()
                 .tabItem {
                     Image("menu_dodaj_ispitni_rok")
                     Text("Dodaj ispitni rok")

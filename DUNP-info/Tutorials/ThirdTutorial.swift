@@ -24,7 +24,7 @@ struct ThirdTutorial: View {
             Text("Izaberi svoj departman")
                 .font(Font.custom("Ubuntu", fixedSize: 24))
                 .bold()
-                .padding(.bottom)
+                .padding(self.settings.isOver ? .vertical : .bottom)
               //  .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
             Text("Možete dodati i više departmana u okviru kojih ćete izabrati smerove za koje želite da primate vesti i obaveštenja.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.white)
                 .overlay(
@@ -81,7 +81,7 @@ struct ThirdTutorial: View {
                   }
                  }
                 
-            }.listStyle(InsetListStyle())
+            }.listStyle(InsetListStyle()) .navigationBarTitle("", displayMode: .inline).padding(.bottom)
         }
     }
 }
