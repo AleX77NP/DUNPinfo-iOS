@@ -15,6 +15,7 @@ struct NewsSearchBar: UIViewRepresentable {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.delegate = context.coordinator
         searchBar.backgroundImage = UIImage()
+        searchBar.placeholder = "Pretraži"
         return searchBar
     }
     

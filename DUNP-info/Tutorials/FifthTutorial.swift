@@ -34,7 +34,7 @@ struct FifthTutorial: View {
             Text("Za šta želite da dobijate novosti?")
                 .font(Font.custom("Ubuntu", fixedSize: 24))
                 .bold()
-                .padding()
+                .padding(self.settings.isOver ? .vertical : .bottom)
               //  .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
             
             List {
@@ -64,7 +64,7 @@ struct FifthTutorial: View {
                     }.padding()
                 }
                 
-            }
+            }.navigationTitle("").navigationBarTitleDisplayMode(.inline)
         }.ignoresSafeArea(.keyboard)
     }
 }

@@ -18,7 +18,7 @@ struct LinkView: View {
         if(self.tip != "instagram") {
             NewsWebView(link: self.link)
         } else {
-            SafariView(url: URL(string: self.link)!)
+            SafariView(url: URL(string: self.link)!).navigationTitle("").navigationBarTitleDisplayMode(.inline)
         }
   }
 }
@@ -34,5 +34,6 @@ struct SafariView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {
 
     }
+    
 
 }

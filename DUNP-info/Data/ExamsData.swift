@@ -59,7 +59,7 @@ class ExamsFecther: ObservableObject {
             do {
                 let temp = try JSONDecoder().self.decode([DUNPdep].self, from: data!)
                 DispatchQueue.main.async {
-                    print(temp)
+                    //print(temp)
                     self.examsDeps = temp
                 }
             }

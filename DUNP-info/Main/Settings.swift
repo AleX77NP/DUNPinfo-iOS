@@ -111,7 +111,8 @@ struct Settings : View {
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(Color.primary, lineWidth: 2)
                     ).background(RoundedRectangle(cornerRadius: 5).fill(Color.gray.opacity(0.1)))
-                NavigationLink(destination: FifthTutorial(), isActive: $isActive3){HStack{
+                NavigationLink(destination: FifthTutorial(), isActive: $isActive3){
+                    HStack{
                 Button(action: {
                     print("izmena")
                     self.isActive3.toggle()

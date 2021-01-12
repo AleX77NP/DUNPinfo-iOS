@@ -12,14 +12,19 @@ struct SixthTutorial: View {
     @State var email: String = getMe() as! String
     @State var password: String = ""
     var body: some View{
-        Text("Unesite login podatke za Moodle")
-            .font(Font.custom("Ubuntu", fixedSize: 24))
-            .bold()
-            .padding()
+        VStack{
           //  .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
         
         Form {
-            Section(header: Text("MOODLE")){
+            Section(header: Text("LOGIN INFO")){
+                HStack{
+                    Spacer()
+                Text("Podaci za prijavu")
+                    .font(Font.custom("Ubuntu", fixedSize: 24))
+                    .bold()
+                    .padding()
+                    Spacer()
+                }
                 Text("Email adresa:").font(Font.custom("Roboto", size: 16))
             TextField("Unesite email adresu", text: $email)
                 Text("Lozinka:").font(Font.custom("Roboto", size: 16))
@@ -39,6 +44,16 @@ struct SixthTutorial: View {
             }
         }.padding(.top)
         .gesture(DragGesture().onChanged{_ in UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)})
-        
+        }
+        .onTapGesture {
+            self.endTextEditing()
+      }
     }
+}
+
+extension View {
+  func endTextEditing() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                    to: nil, from: nil, for: nil)
+  }
 }

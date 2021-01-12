@@ -81,7 +81,7 @@ struct ThirdTutorial: View {
                   }
                  }
                 
-            }.listStyle(InsetListStyle()) .navigationBarTitle("", displayMode: .inline).padding(.bottom)
+            }.listStyle(InsetListStyle()).navigationTitle("").navigationBarTitleDisplayMode(.inline)
         }
     }
 }

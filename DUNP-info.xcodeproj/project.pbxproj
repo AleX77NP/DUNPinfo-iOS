@@ -33,6 +33,7 @@
 		9C5F926C256326E60079C693 /* NewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F926B256326E60079C693 /* NewsFetcher.swift */; };
 		9C7FEEFE2572E0D500A12B46 /* NewsLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FEEFD2572E0D500A12B46 /* NewsLink.swift */; };
 		9C8168A12579230C00DC452D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8168A02579230C00DC452D /* Settings.swift */; };
+		9C8B41A625AE18280065632C /* ExamUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8B41A525AE18280065632C /* ExamUpload.swift */; };
 		9CA104A025532BE9002969FE /* DUNP_infoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1049F25532BE9002969FE /* DUNP_infoApp.swift */; };
 		9CA104A225532BE9002969FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA104A125532BE9002969FE /* ContentView.swift */; };
 		9CA104A425532BEC002969FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA104A325532BEC002969FE /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		9C5F926B256326E60079C693 /* NewsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFetcher.swift; sourceTree = "<group>"; };
 		9C7FEEFD2572E0D500A12B46 /* NewsLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLink.swift; sourceTree = "<group>"; };
 		9C8168A02579230C00DC452D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		9C8B41A525AE18280065632C /* ExamUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamUpload.swift; sourceTree = "<group>"; };
 		9CA1049C25532BE9002969FE /* DUNP-info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DUNP-info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA1049F25532BE9002969FE /* DUNP_infoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DUNP_infoApp.swift; sourceTree = "<group>"; };
 		9CA104A125532BE9002969FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				9C31533E25AB1C2A00FB80C1 /* ExamsDocs.swift */,
 				9C31534125AB30CC00FB80C1 /* IRItem.swift */,
 				9C49F4B325AC659A0059C684 /* ExamChoice.swift */,
+				9C8B41A525AE18280065632C /* ExamUpload.swift */,
 			);
 			path = Exams;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				9C5F92612562EB8A0079C693 /* SixthTutorial.swift in Sources */,
 				9C4B80622587F29A005D4137 /* ExamsData.swift in Sources */,
 				9C31534525AB3C7D00FB80C1 /* ExamImage.swift in Sources */,
+				9C8B41A625AE18280065632C /* ExamUpload.swift in Sources */,
 				9CDF3FAC255C2E9A00AC8109 /* Department.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

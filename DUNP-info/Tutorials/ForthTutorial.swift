@@ -23,6 +23,7 @@ struct ForthTutorial: View {
             Text("Izaberite jedan ili više smerova")
                 .font(Font.custom("Ubuntu", fixedSize: 24))
                 .bold()
+                .padding(self.settings.isOver ? .vertical : .bottom)
               //  .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
             
             List(myDeps.deps) { dep in
@@ -80,7 +81,7 @@ struct ForthTutorial: View {
                     }
                     }.padding(.bottom)
               }
-           }
+           }.navigationTitle("").navigationBarTitleDisplayMode(.inline)
         }
-  }
+    }
 }

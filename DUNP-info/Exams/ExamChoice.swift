@@ -11,6 +11,8 @@ import SwiftUI
 struct ExamChoice: View {
     @ObservedObject var examsFetcher = ExamsFecther()
     
+    @State var isActive = false
+    
     var rokovi : [String] = [
         "Januar",
         "Februar",
@@ -73,10 +75,10 @@ struct ExamChoice: View {
                  }.onChange(of: selectionG) { _ in
                     print(selectionG)
                 }
-                    HStack{
-                        Spacer()
+                        HStack{
+                            Spacer()
                     Button(action: {
-                        print("Napred")
+                        isActive.toggle()
                     }) {
                         HStack{
                         Text("NAPRED")
@@ -88,10 +90,12 @@ struct ExamChoice: View {
                     }.padding().frame(height:40)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(hex: 0x5400cb), lineWidth: 2)
-                        
-                 )
-                    }.padding(.top).padding(.leading).padding(.bottom)
+                            .stroke(Color(hex: 0x5400cb), lineWidth: 2))
+                            
+                            NavigationLink (destination: ExamUpload(predmet: selectionP, godina: selectionG, rok: selectionR), isActive: $isActive){}.hidden().frame(width:0)
+                            
+                    }.padding([.top,.leading,.bottom])
+            
               }
                 
             }.navigationTitle("Dodaj ispitni rok").navigationBarTitleDisplayMode(.inline)
