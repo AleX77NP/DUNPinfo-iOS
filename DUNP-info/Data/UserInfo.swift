@@ -159,10 +159,11 @@ func formirajURL(id: Int) -> String {
         }
         else {
             for dep in departmani.deps {
-                url.append("&tip=" + p.replacingOccurrences(of: " ", with: "_") + "-" + dep.name.replacingOccurrences(of: " ", with: "_").uppercased())
+                url.append("&tip=" + p.replacingOccurrences(of: " ", with: "_") + "-" + dep.name.replacingOccurrences(of: " ", with: "_").split(separator: "-")[0].uppercased())
             }
         }
     }
+    print(url)
     return url
 }
 

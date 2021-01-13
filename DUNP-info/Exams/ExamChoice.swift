@@ -29,10 +29,12 @@ struct ExamChoice: View {
     ]
     
     @State private var selection = 1
-    @State private var selectionC = 1
-    @State private var selectionP = 1
+    @State private var selectionC = 0
+    @State private var selectionP = 0
     @State private var selectionR = "Januar"
     @State private var selectionG = 2006
+    
+    @State private var showAlert = false
     let year = Calendar.current.component(.year, from: Date())
     
     
@@ -55,7 +57,7 @@ struct ExamChoice: View {
                         print(selectionC)
                     }
                 Picker(selection: $selectionP, label: Text("Predmet")) {
-                    ForEach(examsFetcher.examsDeps.first(where: {$0.id == selection})!.smer_set.first(where: {$0.id == selectionC})?.smerpredmet_set ?? [], id: \.self.predmet) { pred in
+                    ForEach(examsFetcher.examsDeps.first(where: {$0.id == selection})?.smer_set.first(where: {$0.id == selectionC})?.smerpredmet_set ?? [], id: \.self.predmet) { pred in
                         Text(pred.naziv_predmeta).id(pred.predmet)
                     }
                 }.onChange(of: selectionP) { _ in
@@ -78,7 +80,12 @@ struct ExamChoice: View {
                         HStack{
                             Spacer()
                     Button(action: {
+                        if (selectionC == 0 || selectionP == 0) {
+                            print("greska")
+                            showAlert = true
+                        } else {
                         isActive.toggle()
+                        }
                     }) {
                         HStack{
                         Text("NAPRED")
@@ -92,13 +99,15 @@ struct ExamChoice: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color(hex: 0x5400cb), lineWidth: 2))
                             
-                            NavigationLink (destination: ExamUpload(predmet: selectionP, godina: selectionG, rok: selectionR), isActive: $isActive){}.hidden().frame(width:0)
+                            NavigationLink (destination: ExamUpload(predmet: selectionP, godina: selectionG, rok: selectionR), isActive: $isActive){}.hidden().frame(width:0).disabled(!isActive)
                             
                     }.padding([.top,.leading,.bottom])
             
               }
                 
             }.navigationTitle("Dodaj ispitni rok").navigationBarTitleDisplayMode(.inline)
+        }.alert(isPresented: $showAlert) {
+            Alert(title: Text("Podaci"), message: Text("Morate odabrati smer i/ili predmet kako biste nastavili dalje."))
         }
     }
 }

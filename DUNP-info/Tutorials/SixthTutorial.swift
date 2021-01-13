@@ -32,6 +32,7 @@ struct SixthTutorial: View {
                 Button(action:
                         {
                             saveUserInfo(username: email, password: password)
+                            
                         }
                 ) {
                     HStack{
@@ -39,7 +40,7 @@ struct SixthTutorial: View {
                         Text("Sačuvaj").foregroundColor(Color(hex: 0x5400cb)).fontWeight(.bold).font(Font.custom("Ubuntu", fixedSize: 21))
                         Spacer()
                     }
-                }.padding()
+                }.padding().buttonStyle(PlainButtonStyle())
                 
             }
         }.padding(.top)
