@@ -13,8 +13,18 @@ struct ExamUpload: View {
     var predmet: Int
     var godina: Int
     var rok: String
-    @State var img1 = 0
-    @State var img2 = 0
+    @State var image1 = UIImage()
+    @State var image2 = UIImage()
+    @State var showPicker = false
+    @State var showAlert = false
+    @State var sourceT: UIImagePickerController.SourceType = .photoLibrary
+    
+    func moveImages() -> Void {
+        var temp: UIImage = UIImage()
+        temp = image1
+        image1 = image2
+        image2 = temp
+    }
     
     var body: some View {
         VStack(alignment: .leading){
@@ -25,8 +35,11 @@ struct ExamUpload: View {
                 ).background(RoundedRectangle(cornerRadius: 5).fill(Color.gray.opacity(0.1)))
             HStack {
                 Button(action: {
-                    print("galerija")
-                    img1 = 1
+                    if(image1.size.width > 0 && image2.size.width > 0){
+                        showAlert = true
+                    } else {
+                    showPicker.toggle()
+                    }
                 }) {
                     Text("GALERIJA").fontWeight(.bold).font(Font.custom("Raleway", fixedSize: 18))
                         .foregroundColor(Color(hex: 0x5400cb))
@@ -40,8 +53,12 @@ struct ExamUpload: View {
                 )
                 
                 Button(action: {
-                    print("kamera")
-                    img2 = 1
+                    if(image1.size.width > 0 && image2.size.width > 0){
+                        showAlert = true
+                    } else {
+                    sourceT = .camera
+                    showPicker.toggle()
+                    }
                 }) {
                     Image("add_a_photo")
                         .foregroundColor(Color(hex: 0x5400cb))
@@ -58,12 +75,12 @@ struct ExamUpload: View {
             }
             VStack{
             HStack {
-                Image(uiImage: UIImage()).frame(width: 180, height: 180).border(Color.black, width: 1)
+                Image(uiImage: image1).resizable().scaledToFill()
+                    .frame(width: 180, height: 180).border(Color.black, width: 1).clipped()
                 HStack{
                 Spacer()
-                    VStack{
                     Button(action: {
-                        
+                        image1 = UIImage()
                     }) {
                     HStack{
                     Image("close").foregroundColor(Color(hex: 0x5400cb))
@@ -74,30 +91,17 @@ struct ExamUpload: View {
                         RoundedRectangle(cornerRadius: 40)
                             .stroke(Color(hex: 0x5400cb), lineWidth: 2)
                         
-                    )
-                        Button(action: {
-                            
-                        }) {
-                        HStack{
-                        Image("edit").foregroundColor(Color(hex: 0x5400cb))
-                            Text("Izmeni").font(Font.custom("Roboto", size: 16)).foregroundColor(Color(hex: 0x5400cb))
-                            }
-                        } .padding(.vertical,12).padding(.horizontal,16)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 40)
-                                .stroke(Color(hex: 0x5400cb), lineWidth: 2)
-                            
-                        ).padding(.top)
-                    }
+                     )
                 Spacer()
                 }
-            }.opacity(img1 > 0 ? 1 : 0)
+            }
             HStack {
-                Image(uiImage: UIImage()).frame(width: 180, height: 180).border(Color.black, width: 1)
+                Image(uiImage: image2).resizable().scaledToFill()
+                    .frame(width: 180, height: 180).border(Color.black, width: 1).clipped()
                 HStack{
                 Spacer()
-                    VStack{
                     Button(action: {
+                        image2 = UIImage()
                     }) {
                 HStack{
                 Image("close").foregroundColor(Color(hex: 0x5400cb))
@@ -109,23 +113,9 @@ struct ExamUpload: View {
                         .stroke(Color(hex: 0x5400cb), lineWidth: 2)
                     
                     )
-                        
-                        Button(action: {
-                        }) {
-                    HStack{
-                    Image("edit").foregroundColor(Color(hex: 0x5400cb))
-                    Text("Izmeni").font(Font.custom("Roboto", size: 16)).foregroundColor(Color(hex: 0x5400cb))
-                        }
-                        } .padding(.vertical,12).padding(.horizontal,16)
-                        .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color(hex: 0x5400cb), lineWidth: 2)
-                        
-                    ).padding(.top)
-                    }
                 Spacer()
                 }
-            }.opacity(img2 > 0 ? 1 : 0)
+              }
             }.padding(.top)
             
             
@@ -133,6 +123,7 @@ struct ExamUpload: View {
             HStack {
                 
                 Button(action: {
+                    moveImages()
                 }) {
                     Text("ZAMENI")
                         .fontWeight(.bold).font(Font.custom("Raleway", fixedSize: 18))
@@ -160,6 +151,10 @@ struct ExamUpload: View {
             }
         }.frame(width: UIScreen.main.bounds.width*0.90)
         .navigationTitle("Dodaj slike").navigationBarTitleDisplayMode(.inline).padding([.top,.bottom])
+        .sheet(isPresented: $showPicker, content: {ImagePickerView(isPresented: $showPicker, pickedImg: image1.size.width == 0 ? $image1 : $image2, sourceType: $sourceT)})
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Popunjena polja"), message: Text("Oba polja za slike su popunjena."))
+        }
     }
 }
 

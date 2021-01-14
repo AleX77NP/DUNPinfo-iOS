@@ -13,6 +13,8 @@ struct ExamChoice: View {
     
     @State var isActive = false
     
+    @ObservedObject var depSettings: departmentsChanged = .sharedDeps
+    
     var rokovi : [String] = [
         "Januar",
         "Februar",
@@ -37,6 +39,11 @@ struct ExamChoice: View {
     @State private var showAlert = false
     let year = Calendar.current.component(.year, from: Date())
     
+    func mojiDep(depId: Int) -> Bool {
+        let ids = depSettings.deps.map{$0.id}
+        return ids.contains(depId) ? true : false
+    }
+    
     
     var body: some View {
         NavigationView {
@@ -44,7 +51,9 @@ struct ExamChoice: View {
                 Section{
                 Picker(selection: $selection, label: Text("Departman")) {
                     ForEach(examsFetcher.examsDeps) { dep in
+                        if mojiDep(depId: dep.id) {
                         Text(dep.naziv).id(dep.id)
+                        }
                     }
                  }.onChange(of: selection) { _ in
                     print(selection)
