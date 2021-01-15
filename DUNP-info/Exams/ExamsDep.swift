@@ -16,6 +16,10 @@ struct ExamsDep : View {
     var body: some View {
         VStack{
         NavigationView{
+            if examsFetcher.examsDeps.isEmpty {
+                Text("Lista departmana trenutno nije dostupna").navigationTitle("Departmani")
+            }
+            
         List(self.examsFetcher.examsDeps) { dep in
             ExamsDepItem(dep: dep)
         }.navigationTitle("Departmani")

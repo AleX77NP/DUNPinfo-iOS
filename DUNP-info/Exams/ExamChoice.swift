@@ -36,6 +36,7 @@ struct ExamChoice: View {
     @State private var selectionP = 0
     @State private var selectionR = "Januar"
     @State private var selectionG = 2006
+    @State private var nazivP = ""
     
     @State private var showAlert = false
     let year = Calendar.current.component(.year, from: Date())
@@ -72,6 +73,7 @@ struct ExamChoice: View {
                     }
                 }.onChange(of: selectionP) { _ in
                         print(selectionP)
+                    nazivP = examsFetcher.examsDeps.first(where: {$0.id == selection})?.smer_set.first(where: {$0.id == selectionC})?.smerpredmet_set.first(where: {$0.predmet == selectionP})?.naziv_predmeta ?? ""
                     }
                 Picker(selection: $selectionR, label: Text("Ispitni rok")) {
                     ForEach(rokovi, id: \.self) { rok in
@@ -109,7 +111,7 @@ struct ExamChoice: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color(hex: 0x5400cb), lineWidth: 2))
                             
-                            NavigationLink (destination: ExamUpload(predmet: selectionP, godina: selectionG, rok: selectionR), isActive: $isActive){}.hidden().frame(width:0).disabled(!isActive)
+                            NavigationLink (destination: ExamUpload(predmet: selectionP, godina: selectionG, rok: selectionR, nazivPr: nazivP), isActive: $isActive){}.hidden().frame(width:0).disabled(!isActive)
                             
                     }.padding([.top,.leading,.bottom])
             

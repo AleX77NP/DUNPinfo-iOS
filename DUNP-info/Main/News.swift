@@ -26,6 +26,7 @@ struct News : View {
     ]
     
     func fetchNews() -> Void {
+        var temp: [NewsItem] = []
         self.loading = true
         let mojUrl = formirajURL(id: getLatestId())
         print(mojUrl)
@@ -36,7 +37,9 @@ struct News : View {
                 URLSession.shared.self.dataTask(with: url) {
                     (data, response, error) in
                     do {
-                        let temp = try JSONDecoder().self.decode([NewsItem].self, from: data!)
+                        if data != nil {
+                        temp = try JSONDecoder().self.decode([NewsItem].self, from: data!)
+                        }
                         DispatchQueue.main.async {
                             saveMyNews(news: temp)
                             let latest_ID = temp.map { $0.pk}.max()

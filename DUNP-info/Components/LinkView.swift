@@ -16,7 +16,7 @@ struct LinkView: View {
     
     var body: some View {
         if(self.tip != "instagram") {
-            NewsWebView(link: self.link)
+            NewsWebView(link: self.link).navigationTitle("").navigationBarTitleDisplayMode(.inline)
         } else {
             SafariView(url: URL(string: self.link)!).navigationTitle("").navigationBarTitleDisplayMode(.inline)
         }
