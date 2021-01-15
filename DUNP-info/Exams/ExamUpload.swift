@@ -18,6 +18,8 @@ struct ExamUpload: View {
     @State var showPicker = false
     @State var showAlert = false
     @State var sourceT: UIImagePickerController.SourceType = .photoLibrary
+    @State var navActive = false
+    @State var messageAlert = "Oba polja za slike su popunjena."
     
     func moveImages() -> Void {
         var temp: UIImage = UIImage()
@@ -54,6 +56,7 @@ struct ExamUpload: View {
                 
                 Button(action: {
                     if(image1.size.width > 0 && image2.size.width > 0){
+                        messageAlert = "Oba polja za slike su popunjena."
                         showAlert = true
                     } else {
                     sourceT = .camera
@@ -135,9 +138,15 @@ struct ExamUpload: View {
                 
                 Spacer()
                 Button(action: {
+                    if image1.size.width == 0 && image2.size.width == 0 {
+                        messageAlert = "Oba polja za slike su prazna."
+                        showAlert = true
+                    } else {
+                    navActive.toggle()
+                    }
                 }) {
                     HStack{
-                    Text("UPLOAD")
+                    Text("NASTAVI")
                         .fontWeight(.bold).font(Font.custom("Raleway", fixedSize: 18))
                         .foregroundColor(Color(hex: 0x5400cb))
                         Image("arrow_right")
@@ -147,13 +156,14 @@ struct ExamUpload: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color(hex: 0x5400cb), lineWidth: 2))
+                NavigationLink(destination: ExamUpload2(img1: image1, img2: image2), isActive: $navActive){}.hidden().frame(width:0).disabled(!navActive)
                         
             }
         }.frame(width: UIScreen.main.bounds.width*0.90)
         .navigationTitle("Dodaj slike").navigationBarTitleDisplayMode(.inline).padding([.top,.bottom])
         .sheet(isPresented: $showPicker, content: {ImagePickerView(isPresented: $showPicker, pickedImg: image1.size.width == 0 ? $image1 : $image2, sourceType: $sourceT)})
         .alert(isPresented: $showAlert) {
-            Alert(title: Text("Popunjena polja"), message: Text("Oba polja za slike su popunjena."))
+            Alert(title: Text("Odabir slika"), message: Text(messageAlert))
         }
     }
 }

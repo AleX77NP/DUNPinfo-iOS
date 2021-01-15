@@ -40,6 +40,7 @@
 		9CA104A425532BEC002969FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA104A325532BEC002969FE /* Assets.xcassets */; };
 		9CA104A725532BEC002969FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA104A625532BEC002969FE /* Preview Assets.xcassets */; };
 		9CA104B12553335A002969FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CA104B02553335A002969FE /* GoogleService-Info.plist */; };
+		9CAD0D3025B1A0D4009AB509 /* ExamUpload2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD0D2F25B1A0D4009AB509 /* ExamUpload2.swift */; };
 		9CB38369257E72CA0010F1E1 /* NewsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB38368257E72CA0010F1E1 /* NewsSearch.swift */; };
 		9CC134D725608DD000C2F650 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC134D625608DD000C2F650 /* Student.swift */; };
 		9CD3CB57257AC6A800804EC8 /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3CB56257AC6A800804EC8 /* LinkView.swift */; };
@@ -91,6 +92,7 @@
 		9CA104A825532BEC002969FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA104B02553335A002969FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9CA104B5255334C9002969FE /* DUNP-info.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DUNP-info.entitlements"; sourceTree = "<group>"; };
+		9CAD0D2F25B1A0D4009AB509 /* ExamUpload2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamUpload2.swift; sourceTree = "<group>"; };
 		9CB38368257E72CA0010F1E1 /* NewsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearch.swift; sourceTree = "<group>"; };
 		9CC134D625608DD000C2F650 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		9CD3CB56257AC6A800804EC8 /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				9C31534125AB30CC00FB80C1 /* IRItem.swift */,
 				9C49F4B325AC659A0059C684 /* ExamChoice.swift */,
 				9C8B41A525AE18280065632C /* ExamUpload.swift */,
+				9CAD0D2F25B1A0D4009AB509 /* ExamUpload2.swift */,
 			);
 			path = Exams;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				9CDF3FA5255C138B00AC8109 /* SecondTutorial.swift in Sources */,
 				9C5F92612562EB8A0079C693 /* SixthTutorial.swift in Sources */,
 				9C4B80622587F29A005D4137 /* ExamsData.swift in Sources */,
+				9CAD0D3025B1A0D4009AB509 /* ExamUpload2.swift in Sources */,
 				9C31534525AB3C7D00FB80C1 /* ExamImage.swift in Sources */,
 				9C8B41A625AE18280065632C /* ExamUpload.swift in Sources */,
 				9CDF3FAC255C2E9A00AC8109 /* Department.swift in Sources */,

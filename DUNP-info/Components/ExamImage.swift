@@ -17,7 +17,7 @@ struct ExamImage: View {
         Image(systemName: "placeholder image")
         .data(url: URL(string: slika)!)
             .aspectRatio(contentMode: .fill)
-        }
+        }.navigationTitle("").navigationBarTitleDisplayMode(.inline)
     }
 }
 

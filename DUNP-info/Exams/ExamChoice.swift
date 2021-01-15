@@ -26,11 +26,12 @@ struct ExamChoice: View {
         "Avgust",
         "Septembar",
         "Oktobar",
+        "Oktobar2",
         "Novembar",
         "Decembar"
     ]
     
-    @State private var selection = 1
+    @State private var selection = 0
     @State private var selectionC = 0
     @State private var selectionP = 0
     @State private var selectionR = "Januar"
