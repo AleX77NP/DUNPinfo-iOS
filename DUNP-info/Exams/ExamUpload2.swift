@@ -18,6 +18,54 @@ struct ExamUpload2: View {
     var rok2: String
     var nazivPr2 : String
     
+    func uploadImage(paramName: String, fileName: String, image: UIImage) {
+        let url = URL(string: "http://127.0.0.1:8000/api/faks/ispit/")
+
+        let boundary = UUID().uuidString
+        
+        let parameters: [String: Any] = [
+            "predmet": 1,
+            "ispitni_rok": "Oktobar3",
+            "godina": 2045
+        ]
+
+        let session = URLSession.shared
+
+     
+        var urlRequest = URLRequest(url: url!)
+        urlRequest.httpMethod = "POST"
+
+    
+        urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+        var data = Data()
+
+        // Add the image data to the raw http request data
+        data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+        data.append("Content-Disposition: form-data; name=\"\(paramName)\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
+        data.append("Content-Type: image/jpg\r\n\r\n".data(using: .utf8)!)
+        data.append(image.jpegData(compressionQuality: 0.5)!)
+        data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+        
+            for (key, value) in parameters {
+                data.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+                data.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: String.Encoding.utf8)!)
+                data.append("\(value)\r\n".data(using: String.Encoding.utf8)!)
+            }
+        
+        
+
+        session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
+            if error == nil {
+                let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
+                if let json = jsonData as? [String: Any] {
+                    print(json)
+                }
+            }
+        }).resume()
+    }
+
+    
     var body: some View {
         VStack{
             ScrollView(showsIndicators: false){
@@ -40,6 +88,7 @@ struct ExamUpload2: View {
                 let newImg = resizeImage(image: merged, newWidth: 1080.0)
                 print(newImg.size.height*newImg.scale)
                 print(newImg.size.width*newImg.scale)
+                uploadImage(paramName: "slika", fileName: "rok1.jpg", image: newImg)
             }) {
                 HStack{
                 Text("UPLOAD")
@@ -61,7 +110,7 @@ struct ExamUpload2: View {
     }
 }
 
-
+//promena velicine slike na 1080px sirine
 func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
     let scale = newWidth / image.size.width
     let newHeight = image.size.height * scale
@@ -73,6 +122,7 @@ func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
     return newImage!
 }
 
+//spajanje 2 slike
 func mergeImages(image1: UIImage, image2: UIImage) -> UIImage {
         let size = CGSize(width: image1.size.width, height: image1.size.height + image2.size.height)
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
@@ -85,3 +135,4 @@ func mergeImages(image1: UIImage, image2: UIImage) -> UIImage {
     
         return newImage
 }
+
