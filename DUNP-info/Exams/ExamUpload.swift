@@ -82,7 +82,7 @@ struct ExamUpload: View {
             VStack{
             HStack {
                 Image(uiImage: image1).resizable().scaledToFill()
-                    .frame(width: 180, height: 180).border(Color.black, width: 1).clipped()
+                    .frame(width: 180, height: 180).border(Color.primary, width: 1).clipped()
                 HStack{
                 Spacer()
                     Button(action: {
@@ -103,7 +103,7 @@ struct ExamUpload: View {
             }
             HStack {
                 Image(uiImage: image2).resizable().scaledToFill()
-                    .frame(width: 180, height: 180).border(Color.black, width: 1).clipped()
+                    .frame(width: 180, height: 180).border(Color.primary, width: 1).clipped()
                 HStack{
                 Spacer()
                     Button(action: {

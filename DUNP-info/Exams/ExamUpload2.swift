@@ -85,16 +85,16 @@ struct ExamUpload2: View {
             ProgressView().padding()
             }
             ScrollView(showsIndicators: false){
-            HStack{
-                Text(nazivPr2).font(Font.custom("Roboto", size: 18)).bold().padding(.bottom,2)
-                Text(rok2 + " " + String(godina2)).font(Font.custom("Roboto", size: 18)).bold().padding(.bottom,2)
+            VStack{
+                Text(nazivPr2).bold().padding(.bottom,2)
+                Text(rok2 + " " + String(godina2)).bold().padding(.bottom,2)
             }.frame(width: 300).lineLimit(1)
                 
             if(img1.size.width > 0) {
-            Image(uiImage: img1).resizable().frame(width:300, height: 450).scaledToFill().clipped()
+            Image(uiImage: img1).resizable().frame(width:300, height: 450).scaledToFill().border(Color.primary, width: 1).clipped()
             }
             if(img2.size.width > 0) {
-            Image(uiImage: img2).resizable().frame(width:300, height: 450).scaledToFill().clipped()
+            Image(uiImage: img2).resizable().frame(width:300, height: 450).scaledToFill().border(Color.primary, width: 1).clipped()
               }
             }
             HStack {
