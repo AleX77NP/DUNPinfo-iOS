@@ -172,10 +172,9 @@ struct Settings : View {
                 
                 
                 }
-        }.navigationTitle("Podešavanja").navigationViewStyle(StackNavigationViewStyle())
-            }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Reset podataka"), message: Text("Da li ste sigurni da želite da uradite potpuni reset aplikacije?"))
-            }
+        }.navigationTitle("Podešavanja").alert(isPresented: $showAlert) {
+            Alert(title: Text("Reset podataka"), message: Text("Da li ste sigurni da želite da uradite potpuni reset aplikacije?"))
+        }
+            }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -26,7 +26,6 @@ struct News : View {
     ]
     
     func fetchNews() -> Void {
-        var temp: [NewsItem] = []
         self.loading = true
         let mojUrl = formirajURL(id: getLatestId())
         print(mojUrl)
@@ -36,10 +35,9 @@ struct News : View {
           else { return }
                 URLSession.shared.self.dataTask(with: url) {
                     (data, response, error) in
-                    do {
-                        if data != nil {
-                        temp = try JSONDecoder().self.decode([NewsItem].self, from: data!)
-                        }
+                        if data != nil && error == nil {
+                        do {
+                        let temp = try JSONDecoder().self.decode([NewsItem].self, from: data!)
                         DispatchQueue.main.async {
                             saveMyNews(news: temp)
                             let latest_ID = temp.map { $0.pk}.max()
@@ -55,7 +53,9 @@ struct News : View {
                     catch {
                         print(error.localizedDescription)
                         self.loading = false
-                    }
+                }
+             }
+            
             }.resume()
     }
     
@@ -70,7 +70,7 @@ struct News : View {
         } else {
         if(fetcher.newNews.isEmpty) {
             Text("Lista novosti je prazna.").font(Font.custom("Ubuntu", fixedSize: 18))
-                                   }
+            }
         else {
         NavigationView{
         List {
@@ -99,7 +99,7 @@ struct News : View {
                 self.fetcher.newNews = self.fetcher.newNews.filter {$0.fields.tip == tip}
                 }
             })
-        })
+       })
     }
    }
   }

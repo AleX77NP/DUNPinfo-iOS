@@ -49,13 +49,14 @@ struct IspitniRok: Decodable, Hashable, Encodable, Identifiable {
 class ExamsFecther: ObservableObject {
     
     @Published var examsDeps = [DUNPdep]()
-    
+
     func fetchDUNPdeps() -> Void {
-        let depUrl = "http:/68.66.242.98/api/faks/departman"
+        let depUrl = "http:/127.0.0.1:8000/api/faks/departman"
         let url = URL(string: depUrl)
         
         URLSession.shared.self.dataTask(with: url!) {
             (data, response, error) in
+            if data != nil && error == nil {
             do {
                 let temp = try JSONDecoder().self.decode([DUNPdep].self, from: data!)
                 DispatchQueue.main.async {
@@ -66,6 +67,7 @@ class ExamsFecther: ObservableObject {
             catch {
                 print(error)
             }
+          }
         }.resume()
         
     }

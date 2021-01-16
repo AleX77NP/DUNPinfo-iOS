@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ExamUpload: View {
     
+    @Binding var rootIsActive : Bool
+    
     var predmet: Int
     var godina: Int
     var rok: String
@@ -157,7 +159,7 @@ struct ExamUpload: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color(hex: 0x5400cb), lineWidth: 2))
-                NavigationLink(destination: ExamUpload2(img1: image1, img2: image2, predmet2: predmet, godina2: godina, rok2: rok, nazivPr2: nazivPr), isActive: $navActive){}.hidden().frame(width:0).disabled(!navActive)
+                NavigationLink(destination: ExamUpload2(goRoot: $rootIsActive ,img1: image1, img2: image2, predmet2: predmet, godina2: godina, rok2: rok, nazivPr2: nazivPr), isActive: $navActive){}.hidden().frame(width:0).disabled(!navActive)
                         
             }
         }.frame(width: UIScreen.main.bounds.width*0.90)

@@ -111,15 +111,15 @@ struct ExamChoice: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color(hex: 0x5400cb), lineWidth: 2))
                             
-                            NavigationLink (destination: ExamUpload(predmet: selectionP, godina: selectionG, rok: selectionR, nazivPr: nazivP), isActive: $isActive){}.hidden().frame(width:0).disabled(!isActive)
+                            NavigationLink (destination: ExamUpload(rootIsActive: $isActive,predmet: selectionP, godina: selectionG, rok: selectionR, nazivPr: nazivP), isActive: $isActive){}.hidden().frame(width:0).disabled(!isActive)
                             
                     }.padding([.top,.leading,.bottom])
             
               }
                 
-            }.navigationTitle("Dodaj ispitni rok").navigationBarTitleDisplayMode(.inline)
-        }.alert(isPresented: $showAlert) {
-            Alert(title: Text("Podaci"), message: Text("Morate odabrati smer i/ili predmet kako biste nastavili dalje."))
-        }
+            }.navigationTitle("Dodaj ispitni rok").navigationBarTitleDisplayMode(.inline).alert(isPresented: $showAlert) {
+                Alert(title: Text("Podaci"), message: Text("Morate odabrati smer i/ili predmet kako biste nastavili dalje."))
+          }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ExamUpload2: View {
     
+    @Binding var goRoot: Bool
+    
     var img1 : UIImage
     var img2 : UIImage
     
@@ -17,16 +19,21 @@ struct ExamUpload2: View {
     var godina2: Int
     var rok2: String
     var nazivPr2 : String
+    @State var message = ""
+    @State var isUploading = false
+    @State var showAlert = false
     
     func uploadImage(paramName: String, fileName: String, image: UIImage) {
+        
+        isUploading = true
         let url = URL(string: "http://127.0.0.1:8000/api/faks/ispit/")
 
         let boundary = UUID().uuidString
         
         let parameters: [String: Any] = [
-            "predmet": 1,
-            "ispitni_rok": "Oktobar3",
-            "godina": 2045
+            "predmet": predmet2,
+            "ispitni_rok": rok2,
+            "godina": godina2
         ]
 
         let session = URLSession.shared
@@ -44,7 +51,7 @@ struct ExamUpload2: View {
         data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
         data.append("Content-Disposition: form-data; name=\"\(paramName)\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
         data.append("Content-Type: image/jpg\r\n\r\n".data(using: .utf8)!)
-        data.append(image.jpegData(compressionQuality: 0.5)!)
+        data.append(image.jpegData(compressionQuality: 0.55)!)
         data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
         
             for (key, value) in parameters {
@@ -53,14 +60,20 @@ struct ExamUpload2: View {
                 data.append("\(value)\r\n".data(using: String.Encoding.utf8)!)
             }
         
-        
 
         session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
             if error == nil {
                 let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
                 if let json = jsonData as? [String: Any] {
                     print(json)
+                    isUploading = false
+                    message = "Uspešno ste poslali ispitni rok! \n\nIspitni rok sada čeka na odobrenje admina."
+                    showAlert = true
                 }
+            } else {
+                isUploading = false
+                message = "Došlo je do neke greške prilikom upload-a slike!"
+                showAlert = true
             }
         }).resume()
     }
@@ -68,7 +81,12 @@ struct ExamUpload2: View {
     
     var body: some View {
         VStack{
+            if isUploading {
+            ProgressView().padding()
+            }
             ScrollView(showsIndicators: false){
+                Text(nazivPr2).font(Font.custom("Roboto", size: 18)).fontWeight(.bold).padding(.bottom,4)
+            Text(rok2 + " " + String(godina2)).font(Font.custom("Roboto", size: 16))
             if(img1.size.width > 0) {
             Image(uiImage: img1).resizable().frame(width:300, height: 450).scaledToFill().clipped()
             }
@@ -81,14 +99,10 @@ struct ExamUpload2: View {
                 HStack{
                     Spacer()
             Button(action: {
-                print(img1)
+                let fileN = (nazivPr2 + rok2 + String(godina2) + currDate()).replacingOccurrences(of: " ", with: "_") + ".jpg"
                 let merged = mergeImages(image1: img1, image2: img2)
-                print(merged.size.height)
-                print(merged.size.width)
                 let newImg = resizeImage(image: merged, newWidth: 1080.0)
-                print(newImg.size.height*newImg.scale)
-                print(newImg.size.width*newImg.scale)
-                uploadImage(paramName: "slika", fileName: "rok1.jpg", image: newImg)
+                uploadImage(paramName: "slika", fileName: fileN, image: newImg)
             }) {
                 HStack{
                 Text("UPLOAD")
@@ -107,6 +121,11 @@ struct ExamUpload2: View {
             }
         }.padding(.top)
         .navigationTitle("Slike").navigationBarTitleDisplayMode(.inline)
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Upload"), message: Text(message),primaryButton: .destructive(Text("U redu")) {
+                goRoot = false
+        }, secondaryButton: .cancel())
+        }
     }
 }
 
@@ -134,5 +153,13 @@ func mergeImages(image1: UIImage, image2: UIImage) -> UIImage {
         UIGraphicsEndImageContext()
     
         return newImage
+}
+
+func currDate() -> String {
+    let date = Date()
+    let format = DateFormatter()
+    format.dateFormat = "yyyy-MM-dd"
+    let formattedDate = format.string(from: date)
+    return formattedDate
 }
 
