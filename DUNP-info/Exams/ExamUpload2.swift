@@ -26,7 +26,7 @@ struct ExamUpload2: View {
     func uploadImage(paramName: String, fileName: String, image: UIImage) {
         
         isUploading = true
-        let url = URL(string: "http://127.0.0.1:8000/api/faks/ispit/")
+        let url = URL(string: "http://127.0.0.1:8000/api/faks/ispit/") //promeni
 
         let boundary = UUID().uuidString
         
@@ -85,8 +85,11 @@ struct ExamUpload2: View {
             ProgressView().padding()
             }
             ScrollView(showsIndicators: false){
-                Text(nazivPr2).font(Font.custom("Roboto", size: 18)).fontWeight(.bold).padding(.bottom,4)
-            Text(rok2 + " " + String(godina2)).font(Font.custom("Roboto", size: 16))
+            HStack{
+                Text(nazivPr2).font(Font.custom("Roboto", size: 18)).bold().padding(.bottom,2)
+                Text(rok2 + " " + String(godina2)).font(Font.custom("Roboto", size: 18)).bold().padding(.bottom,2)
+            }.frame(width: 300).lineLimit(1)
+                
             if(img1.size.width > 0) {
             Image(uiImage: img1).resizable().frame(width:300, height: 450).scaledToFill().clipped()
             }
