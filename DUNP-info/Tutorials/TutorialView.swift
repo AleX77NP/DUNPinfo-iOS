@@ -12,6 +12,7 @@ struct TutorialView: View {
     @State var CurrentPage = 0
     @State private var showAlert = false
     @ObservedObject var settings: finishedTutorial = .shared
+    @State var message = ""
     var body: some View {
         ZStack(alignment: .bottom){
             if CurrentPage != 2 && CurrentPage != 3 && CurrentPage != 4 && CurrentPage != 5 {
@@ -73,6 +74,7 @@ struct TutorialView: View {
                         if(canGoNext3()) {
                             self.CurrentPage += 1
                         } else {
+                            self.message = "Odaberite barem jedan departman kako biste nastavili dalje."
                             self.showAlert = true
                         }
                     }
@@ -81,6 +83,7 @@ struct TutorialView: View {
                             self.CurrentPage += 1
                         }
                         else {
+                            self.message = "Odaberite barem jedan smer kako biste nastavili dalje."
                             self.showAlert = true
                         }
                     }
@@ -89,22 +92,29 @@ struct TutorialView: View {
                             self.CurrentPage += 1
                         }
                         else {
+                            self.message = "Odaberite barem jedan tip novosti kako biste nastavili dalje."
                             self.showAlert = true
                         }
                     }
                     else if self.CurrentPage == 5 {
                         if(canGoNext6()) {
+                            UserDefaults.standard.setValue(0, forKey: "latest_id")
+                            onFinishTutorial()
                             self.CurrentPage += 1
                         }
                         else {
+                            self.message = "Proverite unete podatke. Lozinka mora imati najmanje 6 karaktera. Sačuvajte podatke kako biste nastavili dalje."
                             self.showAlert = true
                         }
                     }
                     else if self.CurrentPage == 6 {
+                        if(canFinish()) {
                         UserDefaults.standard.setValue("finished", forKey: "finishedT")
-                        UserDefaults.standard.setValue(0, forKey: "latest_id")
-                        onFinishTutorial()
                         self.settings.isOver = true
+                        } else {
+                            self.message = "Došlo je do greske prilikom slanja podatka na server. Molimo Vas pokušate kasnije."
+                            self.showAlert = true
+                        }
                     }
                     
                     else {
@@ -129,7 +139,7 @@ struct TutorialView: View {
            }.frame(width: UIScreen.main.bounds.width*0.80, alignment:.center)
         }.padding(.bottom)
         }.frame(height: UIScreen.main.bounds.height*1).alert(isPresented: $showAlert) {
-            Alert(title: Text("Podešavanja"), message: Text("Morate odabrati barem jednu od datih opcija, ili uneti neophodne podatke kako biste nastavili dalje."))
+            Alert(title: Text("Podešavanja"), message: Text(message))
         }
     }
 }
@@ -165,7 +175,16 @@ func canGoNext5() -> Bool {
 
 func canGoNext6() -> Bool {
     let me = getMe()
-    if me as! String == "" {
+    let pwd = getPwd()
+    if me as! String == "" || pwd as! String == ""  {
+        return false
+    }
+    return true
+}
+
+func canFinish() -> Bool {
+    let ready = isReady()
+    if ready as! String == "" {
         return false
     }
     return true

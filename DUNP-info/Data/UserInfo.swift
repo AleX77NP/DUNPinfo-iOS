@@ -8,6 +8,27 @@
 import Foundation
 import Firebase
 
+func resetApp() -> Void {
+   // UserDefaults.standard.removeObject(forKey: "password")
+    UserDefaults.standard.removeObject(forKey: "finishedT")
+    UserDefaults.standard.removeObject(forKey: "isReady")
+    UserDefaults.standard.removeObject(forKey: "pretplate")
+    UserDefaults.standard.removeObject(forKey: "departmani")
+    UserDefaults.standard.removeObject(forKey: "smerovi")
+    UserDefaults.standard.setValue(0, forKey: "latest_id")
+    emptyNews()
+    
+}
+
+func setReady() -> Void {
+    UserDefaults.standard.setValue("ready", forKey: "isReady")
+}
+
+func isReady() -> Any? {
+    let ready = UserDefaults.standard.value(forKey: "isReady")
+    return ready != nil ? ready : ""
+}
+
 func getAllTypes() -> [String] { // svi tipovi vesti //
     return ["vesti", "obavestenja", "obavestenja smera", "raspored ispita","raspored predavanja", "termini konsultacija", "instagram"]
 }
@@ -20,6 +41,11 @@ func saveUserInfo(username: String, password: String) -> Void { // cuva email i 
 
 func getMe() -> Any? { // vraca podatke o korisniku //
     let me = UserDefaults.standard.value(forKey: "username")
+    return me != nil ? me : ""
+}
+
+func getPwd() -> Any? { 
+    let me = UserDefaults.standard.value(forKey: "password")
     return me != nil ? me : ""
 }
 
@@ -136,6 +162,7 @@ func onFinishTutorial() -> Void {
                 }
                 print(response)
                 print(data)
+                setReady()
             }.resume()
 }
 
@@ -159,7 +186,7 @@ func formirajURL(id: Int) -> String {
         }
         else {
             for dep in departmani.deps {
-                url.append("&tip=" + p.replacingOccurrences(of: " ", with: "_") + "-" + dep.name.replacingOccurrences(of: " ", with: "_").split(separator: "-")[0].uppercased())
+                url.append("&tip=" + p.replacingOccurrences(of: " ", with: "_") + "-" + dep.name.replacingOccurrences(of: " ", with: "_").split(separator: "-")[0].uppercased()) //separator zbog hemijsko-tehnoloskih nauka
             }
         }
     }
@@ -212,7 +239,7 @@ func changeStudentInfo() -> Void {
 
 
 
-class subsChanged: ObservableObject { // visak? //
+class subsChanged: ObservableObject { 
     private init() {}
     static let subsC = subsChanged()
     @Published var subs = vratiPretplate()

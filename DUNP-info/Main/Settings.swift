@@ -16,6 +16,11 @@ struct Settings : View {
     @State var isActive3 = false
     @State var showAlert = false
     
+    @ObservedObject var settings: finishedTutorial = .shared
+    @ObservedObject var deps: departmentsChanged = .sharedDeps
+    @ObservedObject var courses: coursesChanged = .sharedCourses
+    @ObservedObject var subs : subsChanged = .subsC
+    
     init() {
        // print(getMyDepartments())
        /// print(getMyCourses())
@@ -173,7 +178,14 @@ struct Settings : View {
                 
                 }
         }.navigationTitle("Podešavanja").alert(isPresented: $showAlert) {
-            Alert(title: Text("Reset podataka"), message: Text("Da li ste sigurni da želite da uradite potpuni reset aplikacije?"))
+            Alert(title: Text("Reset podataka"), message: Text("Da li ste sigurni da želite da uradite potpuni reset aplikacije?"),
+                  primaryButton: .destructive(Text("U redu")){
+                    resetApp()
+                    self.deps.deps = []
+                    self.courses.courses = []
+                    self.subs.subs = []
+                    self.settings.isOver = false
+                  }, secondaryButton: .cancel())
         }
             }.navigationViewStyle(StackNavigationViewStyle())
     }

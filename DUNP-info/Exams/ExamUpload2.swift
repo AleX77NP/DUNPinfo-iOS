@@ -87,7 +87,7 @@ struct ExamUpload2: View {
             ScrollView(showsIndicators: false){
             VStack{
                 Text(nazivPr2).bold().padding(.bottom,2)
-                Text(rok2 + " " + String(godina2)).bold().padding(.bottom,2)
+                Text(rok2 + " " + String(godina2)).bold().italic().padding(.bottom,2)
                 
             }.frame(width: 300).lineLimit(1)
             

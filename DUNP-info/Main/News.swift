@@ -60,7 +60,7 @@ struct News : View {
     }
     
     init() {
-        //print(getLatestId())
+        print(getLatestId())
         fetchNews()
     }
     
