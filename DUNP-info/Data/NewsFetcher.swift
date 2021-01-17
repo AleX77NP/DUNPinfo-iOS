@@ -95,6 +95,7 @@ func fetchNewsOnChange(fetcher: NewsUpdater) -> Void {
       else { return }
             URLSession.shared.self.dataTask(with: url) {
                 (data, response, error) in
+                if error == nil && data != nil {
                 do {
                     let temp = try JSONDecoder().self.decode([NewsItem].self, from: data!)
                     DispatchQueue.main.async {
@@ -111,5 +112,6 @@ func fetchNewsOnChange(fetcher: NewsUpdater) -> Void {
                 catch {
                     print(error.localizedDescription)
                 }
+              }
         }.resume()
 }
