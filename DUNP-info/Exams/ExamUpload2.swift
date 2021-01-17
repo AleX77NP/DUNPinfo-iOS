@@ -26,7 +26,7 @@ struct ExamUpload2: View {
     func uploadImage(paramName: String, fileName: String, image: UIImage) {
         
         isUploading = true
-        let url = URL(string: "http://127.0.0.1:8000/api/faks/ispit/") //promeni
+        let url = URL(string: "http://68.66.242.98/api/faks/ispit/") //promeni
 
         let boundary = UUID().uuidString
         
@@ -88,7 +88,14 @@ struct ExamUpload2: View {
             VStack{
                 Text(nazivPr2).bold().padding(.bottom,2)
                 Text(rok2 + " " + String(godina2)).bold().padding(.bottom,2)
+                
             }.frame(width: 300).lineLimit(1)
+            
+                Text("Proverite još jednom da li je sve u redu, slike su spojene u jednu i izvršena je kompresija").font(Font.custom("Roboto", size: 15)).foregroundColor(.primary).padding().frame(width: 298)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color.primary, lineWidth: 2)
+                    ).background(RoundedRectangle(cornerRadius: 5).fill(Color.gray.opacity(0.1)))
                 
             if(img1.size.width > 0) {
             Image(uiImage: img1).resizable().frame(width:300, height: 450).scaledToFill().border(Color.primary, width: 1).clipped()

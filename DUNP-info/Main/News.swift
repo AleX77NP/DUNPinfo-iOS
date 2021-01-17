@@ -89,18 +89,19 @@ struct News : View {
             }.onTapGesture {
             self.isOpen.toggle()
         }
-        ).sheet(isPresented: $isOpen, content: {
-            FilterModal(isPresented: $isOpen, chosenType: {
-                tip in
-                if (tip == "sve novosti") {
-                self.fetcher.newNews = getMyNews()
-                } else {
-                self.fetcher.newNews = getMyNews()
-                self.fetcher.newNews = self.fetcher.newNews.filter {$0.fields.tip == tip}
-                }
-            })
-       })
-    }
+       )
+     }
+        .sheet(isPresented: $isOpen, content: {
+        FilterModal(isPresented: $isOpen, chosenType: {
+            tip in
+            if (tip == "sve novosti") {
+            self.fetcher.newNews = getMyNews()
+            } else {
+            self.fetcher.newNews = getMyNews()
+            self.fetcher.newNews = self.fetcher.newNews.filter {$0.fields.tip == tip}
+            }
+        })
+   })
    }
   }
  }

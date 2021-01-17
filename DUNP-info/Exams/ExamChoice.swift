@@ -117,9 +117,9 @@ struct ExamChoice: View {
             
               }
                 
-            }.navigationTitle("Dodaj ispitni rok").navigationBarTitleDisplayMode(.inline).alert(isPresented: $showAlert) {
-                Alert(title: Text("Podaci"), message: Text("Morate odabrati smer i/ili predmet kako biste nastavili dalje."))
-          }
-        }.navigationViewStyle(StackNavigationViewStyle())
+            }.navigationTitle("Dodaj ispitni rok").navigationBarTitleDisplayMode(.inline)
+        }.navigationViewStyle(StackNavigationViewStyle()).alert(isPresented: $showAlert) {
+            Alert(title: Text("Podaci"), message: Text("Morate odabrati smer i/ili predmet kako biste nastavili dalje."))
+      }
     }
 }
