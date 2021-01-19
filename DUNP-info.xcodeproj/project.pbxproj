@@ -560,7 +560,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.edindolicanin.DUNP-info";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Duno-info Profile";
+				PROVISIONING_PROFILE_SPECIFIER = DI_new_profile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -586,7 +586,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.edindolicanin.DUNP-info";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Duno-info Profile";
+				PROVISIONING_PROFILE_SPECIFIER = DI_new_profile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

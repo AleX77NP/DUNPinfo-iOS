@@ -23,6 +23,10 @@
 		<string>instagram</string>
 		<string>fb</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>Access camera</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Library</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

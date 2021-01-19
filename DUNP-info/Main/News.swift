@@ -101,9 +101,9 @@ struct News : View {
             self.fetcher.newNews = self.fetcher.newNews.filter {$0.fields.tip == tip}
             }
         })
-   })
+      })
+    }
    }
-  }
  }
 }
 

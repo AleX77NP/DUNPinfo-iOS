@@ -17,7 +17,9 @@ struct ExamUpload: View {
     var rok: String
     var nazivPr : String
     @State var image1 = UIImage()
+    @State var counter = 1
     @State var image2 = UIImage()
+    @State var chosenImg = UIImage()
     @State var showPicker = false
     @State var showAlert = false
     @State var sourceT: UIImagePickerController.SourceType = .photoLibrary
@@ -43,7 +45,8 @@ struct ExamUpload: View {
                     if(image1.size.width > 0 && image2.size.width > 0){
                         showAlert = true
                     } else {
-                    showPicker.toggle()
+                        self.sourceT = .photoLibrary
+                        self.showPicker.toggle()
                     }
                 }) {
                     Text("GALERIJA").fontWeight(.bold).font(Font.custom("Raleway", fixedSize: 18))
@@ -62,8 +65,8 @@ struct ExamUpload: View {
                         messageAlert = "Oba polja za slike su popunjena."
                         showAlert = true
                     } else {
-                    sourceT = .camera
-                    showPicker.toggle()
+                        self.sourceT = .camera
+                        self.showPicker.toggle()
                     }
                 }) {
                     Image("add_a_photo")
@@ -81,7 +84,7 @@ struct ExamUpload: View {
             }
             VStack{
             HStack {
-                Image(uiImage: image1).resizable().scaledToFill()
+                Image(uiImage: image1).resizable().scaledToFit()
                     .frame(width: 180, height: 180).border(Color.primary, width: 1).clipped()
                 HStack{
                 Spacer()
@@ -100,9 +103,9 @@ struct ExamUpload: View {
                      )
                 Spacer()
                 }
-            }
+            }.opacity(image1.size.width > 0 ? 1: 0)
             HStack {
-                Image(uiImage: image2).resizable().scaledToFill()
+                Image(uiImage: image2).resizable().scaledToFit()
                     .frame(width: 180, height: 180).border(Color.primary, width: 1).clipped()
                 HStack{
                 Spacer()
@@ -121,7 +124,7 @@ struct ExamUpload: View {
                     )
                 Spacer()
                 }
-              }
+              }.opacity(image2.size.width > 0 ? 1: 0)
             }.padding(.top)
             
             
@@ -164,7 +167,7 @@ struct ExamUpload: View {
             }
         }.frame(width: UIScreen.main.bounds.width*0.90)
         .navigationTitle("Dodaj slike").navigationBarTitleDisplayMode(.inline).padding([.top,.bottom])
-        .sheet(isPresented: $showPicker, content: {ImagePickerView(isPresented: $showPicker, pickedImg: image1.size.width == 0 ? $image1 : $image2, sourceType: $sourceT)})
+        .sheet(isPresented: $showPicker, content: {ImagePickerView(isPresented: $showPicker, pickedImg: self.image1.size.width == 0 ? $image1 : $image2, sourceType: $sourceT)})
         .alert(isPresented: $showAlert) {
             Alert(title: Text("Odabir slika"), message: Text(messageAlert))
         }
