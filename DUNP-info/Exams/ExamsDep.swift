@@ -12,7 +12,6 @@ struct ExamsDep : View {
     
     @ObservedObject var examsFetcher = ExamsFecther()
     
-    
     var body: some View {
         VStack{
         NavigationView{
@@ -22,7 +21,8 @@ struct ExamsDep : View {
             
         List(self.examsFetcher.examsDeps) { dep in
             ExamsDepItem(dep: dep)
-        }.navigationTitle("Departmani")
+        }.accentColor(.clear)
+        .navigationTitle("Departmani")
         .listStyle(InsetListStyle())
         }.navigationViewStyle(StackNavigationViewStyle())
       }

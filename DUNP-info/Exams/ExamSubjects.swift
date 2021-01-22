@@ -30,7 +30,8 @@ struct ExamsSubjects: View {
                }
               }
             }
-            }.navigationTitle("Predmeti")
+            }.accentColor(.clear)
+            .navigationTitle("Predmeti")
         }
     }
 }

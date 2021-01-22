@@ -13,6 +13,7 @@
 		9C18056F2577E4E0003DAF4E /* DepItemSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18056E2577E4E0003DAF4E /* DepItemSelected.swift */; };
 		9C18057225780066003DAF4E /* CourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18057125780066003DAF4E /* CourseItem.swift */; };
 		9C180575257800DF003DAF4E /* CourseItemSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C180574257800DF003DAF4E /* CourseItemSelected.swift */; };
+		9C255CC725BB265000E6DD8A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C255CC625BB265000E6DD8A /* ImageLoader.swift */; };
 		9C31533F25AB1C2A00FB80C1 /* ExamsDocs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31533E25AB1C2A00FB80C1 /* ExamsDocs.swift */; };
 		9C31534225AB30CC00FB80C1 /* IRItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31534125AB30CC00FB80C1 /* IRItem.swift */; };
 		9C31534525AB3C7D00FB80C1 /* ExamImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31534425AB3C7D00FB80C1 /* ExamImage.swift */; };
@@ -62,6 +63,7 @@
 		9C18056E2577E4E0003DAF4E /* DepItemSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepItemSelected.swift; sourceTree = "<group>"; };
 		9C18057125780066003DAF4E /* CourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem.swift; sourceTree = "<group>"; };
 		9C180574257800DF003DAF4E /* CourseItemSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItemSelected.swift; sourceTree = "<group>"; };
+		9C255CC625BB265000E6DD8A /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		9C31533E25AB1C2A00FB80C1 /* ExamsDocs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsDocs.swift; sourceTree = "<group>"; };
 		9C31534125AB30CC00FB80C1 /* IRItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRItem.swift; sourceTree = "<group>"; };
 		9C31534425AB3C7D00FB80C1 /* ExamImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamImage.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				9CC134D625608DD000C2F650 /* Student.swift */,
 				9C5F926B256326E60079C693 /* NewsFetcher.swift */,
 				9C4B80612587F29A005D4137 /* ExamsData.swift */,
+				9C255CC625BB265000E6DD8A /* ImageLoader.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				9CF4CEF625646BFE00909B59 /* NewsListItem.swift in Sources */,
 				9C4B829E25AF767E00F4318A /* GalleryPicker.swift in Sources */,
 				9CDF3FB0255C2FFF00AC8109 /* Department_list.swift in Sources */,
+				9C255CC725BB265000E6DD8A /* ImageLoader.swift in Sources */,
 				9C49F4B425AC659A0059C684 /* ExamChoice.swift in Sources */,
 				9C31534225AB30CC00FB80C1 /* IRItem.swift in Sources */,
 				9C41BCD4255F412A00C45C5D /* UserInfo.swift in Sources */,

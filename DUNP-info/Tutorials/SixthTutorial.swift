@@ -39,7 +39,7 @@ struct SixthTutorial: View {
                 ) {
                     HStack{
                         Spacer()
-                        Text("Sačuvaj").foregroundColor(Color(hex: 0x5400cb)).fontWeight(.bold).font(Font.custom("Ubuntu", fixedSize: 21))
+                        Text("Sačuvaj").foregroundColor(Color.primary).fontWeight(.bold).font(Font.custom("Ubuntu", fixedSize: 21))
                         Spacer()
                     }
                 }.padding().buttonStyle(PlainButtonStyle()).disabled(disableForm)

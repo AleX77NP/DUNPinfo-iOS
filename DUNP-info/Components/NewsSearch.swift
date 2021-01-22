@@ -35,6 +35,12 @@ struct NewsSearchBar: UIViewRepresentable {
         }
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             text = searchText
+            if searchText.count < 1 {
+                searchBar.resignFirstResponder()
+            }
+        }
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            searchBar.resignFirstResponder()
         }
     }
     

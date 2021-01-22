@@ -179,7 +179,7 @@ struct Settings : View {
                 }
         }.navigationTitle("Podešavanja").alert(isPresented: $showAlert) {
             Alert(title: Text("Reset podataka"), message: Text("Da li ste sigurni da želite da uradite potpuni reset aplikacije?"),
-                  primaryButton: .destructive(Text("U redu")){
+                  primaryButton: .destructive(Text("Da, jesam")){
                     resetApp()
                     self.deps.deps = []
                     self.courses.courses = []

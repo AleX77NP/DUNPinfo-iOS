@@ -82,6 +82,7 @@ struct ForthTutorial: View {
                     }.padding(.bottom)
               }
            }.navigationTitle("").navigationBarTitleDisplayMode(.inline)
+            .accentColor(.clear)
         }
     }
 }

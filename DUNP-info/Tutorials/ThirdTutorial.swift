@@ -82,6 +82,7 @@ struct ThirdTutorial: View {
                  }
                 
             }.listStyle(InsetListStyle()).navigationTitle("").navigationBarTitleDisplayMode(.inline)
+            .accentColor(.clear)
         }
     }
 }

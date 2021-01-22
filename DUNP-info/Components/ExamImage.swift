@@ -10,26 +10,22 @@ import SwiftUI
 
 struct ExamImage: View {
     
+    @ObservedObject var imageLoader: ImageLoader = ImageLoader()
+    @State var image: UIImage = UIImage()
+    
     var slika: String
     
     var body: some View {
         ScrollView{
-        Image(systemName: "placeholder image")
-        .data(url: URL(string: slika)!)
-            .aspectRatio(contentMode: .fill)
+            Image(uiImage: image).resizable()
+                .aspectRatio(contentMode: .fit)
+                            .onReceive(imageLoader.$data) { data in
+                                guard let data = data else { return }
+                                self.image = UIImage(data: data) ?? UIImage()
+                            }
+                    }.onAppear {
+                        self.imageLoader.loadData(from: slika)
         }.navigationTitle("").navigationBarTitleDisplayMode(.inline)
     }
 }
 
-
-
-extension Image {
-func data(url:URL) -> Self {
-if let data = try? Data(contentsOf: url) {
-return Image(uiImage: UIImage(data: data)!)
-.resizable()
-}
-return self
-.resizable()
-}
-}

@@ -65,6 +65,7 @@ struct FifthTutorial: View {
                 }
                 
             }.navigationTitle("").navigationBarTitleDisplayMode(.inline)
+            .accentColor(.clear)
         }.ignoresSafeArea(.keyboard)
     }
 }

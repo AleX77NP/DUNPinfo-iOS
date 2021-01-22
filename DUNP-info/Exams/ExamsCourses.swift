@@ -16,8 +16,10 @@ struct ExamsCourses: View {
         VStack{
         List(self.smerovi) { smer in
             ExamsCourseItem(smer: smer)
-        }.navigationTitle("Smerovi")
+        }.accentColor(.clear)
+        .navigationTitle("Smerovi")
         .listStyle(InsetListStyle())
+            
        }
     }
 }

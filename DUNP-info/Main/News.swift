@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import UIKit
 
 struct News : View {
     @ObservedObject var fetcher: NewsUpdater = .sharedNews
@@ -161,4 +161,5 @@ struct FilterModal : View {
         }
     }
 }
+
 

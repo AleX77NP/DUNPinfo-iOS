@@ -25,7 +25,8 @@ struct ExamsDocs : View {
         } else {
             List(fetcher.rok.ispitnirok_set.filter {$0.proveren == true}) {set in
             IRItem(rok: set.ispitni_rok, godina: set.godina, slika: set.slika)
-        }.listStyle(InsetListStyle())
+        }.accentColor(.clear)
+            .listStyle(InsetListStyle())
         .navigationTitle("Rokovi")
         }
     }

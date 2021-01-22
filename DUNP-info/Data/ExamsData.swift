@@ -51,8 +51,8 @@ class ExamsFecther: ObservableObject {
     @Published var examsDeps = [DUNPdep]()
 
     func fetchDUNPdeps() -> Void {
-        let depUrl = "http:/68.66.242.98/api/faks/departman"
-        let url = URL(string: depUrl)
+        let depUrl = "http:/68.66.242.98/api/faks/departman/"
+        let url = URL(string: depUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         
         URLSession.shared.self.dataTask(with: url!) {
             (data, response, error) in
@@ -60,7 +60,6 @@ class ExamsFecther: ObservableObject {
             do {
                 let temp = try JSONDecoder().self.decode([DUNPdep].self, from: data!)
                 DispatchQueue.main.async {
-                    //print(temp)
                     self.examsDeps = temp
                 }
             }
@@ -88,7 +87,7 @@ class IRFetcher: ObservableObject {
     
     func fetchIR() -> Void {
         let depUrl = "http://68.66.242.98/api/faks/predmet/" + String(idP) + "/"
-        let url = URL(string: depUrl)
+        let url = URL(string: depUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         
 
         URLSession.shared.self.dataTask(with: url!) {

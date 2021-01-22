@@ -20,5 +20,6 @@ struct ExamsDepItem: View {
                 Spacer()
             }.border(Color.gray, width: 2)
     }.buttonStyle(PlainButtonStyle()).accentColor(Color.clear)
+        
   }
 }
