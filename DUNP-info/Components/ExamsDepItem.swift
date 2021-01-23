@@ -16,7 +16,7 @@ struct ExamsDepItem: View {
         NavigationLink(destination: ExamsCourses(smerovi: dep.smer_set)){
             HStack{
             Text(dep.naziv)
-                .font(Font.custom("Roboto",fixedSize: 14)).padding()
+                .font(Font.custom("Roboto",fixedSize: 14)).padding().foregroundColor(Color.secondary)
                 Spacer()
             }.border(Color.gray, width: 2)
     }.buttonStyle(PlainButtonStyle()).accentColor(Color.clear)
