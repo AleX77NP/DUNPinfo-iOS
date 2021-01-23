@@ -76,12 +76,10 @@ struct News : View {
                 }
             else {
         List {
-            VStack{
             NewsSearchBar(text: $text)
             ForEach(fetcher.newNews.filter {self.text.isEmpty ? true : $0.fields.naslov.lowercased().contains(text.lowercased())}, id: \.self) { novelty in
                 NewsListItem(item: novelty, color: lista.first(where: {$0.tip == novelty.fields.tip})!.boja)
             }
-          }
         }.navigationTitle("Novosti")
         .listStyle(InsetListStyle())
         .navigationBarItems(leading: Text("Osveži").onTapGesture {
