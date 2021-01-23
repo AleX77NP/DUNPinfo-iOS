@@ -112,6 +112,8 @@ func fetchNewsOnChange(fetcher: NewsUpdater) -> Void {
                 catch {
                     print(error.localizedDescription)
                 }
-              }
+                } else {
+                    return
+                }
         }.resume()
 }

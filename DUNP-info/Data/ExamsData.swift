@@ -66,7 +66,9 @@ class ExamsFecther: ObservableObject {
             catch {
                 print(error)
             }
-         }
+            } else {
+                return
+            }
         }.resume()
         
     }
@@ -101,8 +103,10 @@ class IRFetcher: ObservableObject {
             }
             catch {
                 print(error.localizedDescription)
+              }
+            } else {
+                return
             }
-          }
         }.resume()
     }
 }

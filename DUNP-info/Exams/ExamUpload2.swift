@@ -98,10 +98,10 @@ struct ExamUpload2: View {
                     ).background(RoundedRectangle(cornerRadius: 5).fill(Color.gray.opacity(0.1)))
                 
             if(img1.size.width > 0) {
-            Image(uiImage: img1).resizable().frame(width:300, height: 450).scaledToFill().border(Color.primary, width: 1).clipped()
+            Image(uiImage: img1).resizable().frame(width:300, height: 465).scaledToFit().border(Color.primary, width: 1).clipped()
             }
             if(img2.size.width > 0) {
-            Image(uiImage: img2).resizable().frame(width:300, height: 450).scaledToFill().border(Color.primary, width: 1).clipped()
+            Image(uiImage: img2).resizable().frame(width:300, height: 465).scaledToFit().border(Color.primary, width: 1).clipped()
               }
             }
             HStack {

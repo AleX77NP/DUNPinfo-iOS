@@ -24,9 +24,9 @@
 		<string>fb</string>
 	</array>
     <key>NSCameraUsageDescription</key>
-    <string>Access camera</string>
+    <string>Camera Access needed in order to take photos of older exams</string>
     <key>NSPhotoLibraryUsageDescription</key>
-    <string>Library</string>
+    <string>Photo Library Access needed to take photos of older exams</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

@@ -187,6 +187,6 @@ struct Settings : View {
                     self.settings.isOver = false
                   }, secondaryButton: .cancel())
         }
-            }.navigationViewStyle(StackNavigationViewStyle())
+      }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

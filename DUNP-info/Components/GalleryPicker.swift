@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import UIKit
+
 
 
 struct ImagePickerView: UIViewControllerRepresentable {
@@ -18,6 +20,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePickerView>) ->  UIViewController {
         let controller = UIImagePickerController()
         controller.sourceType = sourceType
+        //controller.allowsEditing = true
         controller.delegate = context.coordinator
         return controller
     }
@@ -37,6 +40,9 @@ struct ImagePickerView: UIViewControllerRepresentable {
             if let selectedImage = info[.originalImage] as? UIImage {
                 self.parent.pickedImg = selectedImage
             }
+            self.parent.isPresented = false
+        }
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             self.parent.isPresented = false
         }
     }

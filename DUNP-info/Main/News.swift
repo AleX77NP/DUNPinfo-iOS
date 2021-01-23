@@ -54,7 +54,9 @@ struct News : View {
                         print(error.localizedDescription)
                         self.loading = false
                 }
-             }
+                 } else {
+                    return
+              }
             
             }.resume()
     }
@@ -78,8 +80,8 @@ struct News : View {
             ForEach(fetcher.newNews.filter {self.text.isEmpty ? true : $0.fields.naslov.lowercased().contains(text.lowercased())}, id: \.self) { novelty in
                 NewsListItem(item: novelty, color: lista.first(where: {$0.tip == novelty.fields.tip})!.boja)
             }
-      }.listStyle(InsetListStyle())
-        .navigationTitle("Novosti")
+        }.navigationTitle("Novosti")
+        .listStyle(InsetListStyle())
         .navigationBarItems(leading: Text("Osveži").onTapGesture {
             self.fetchNews()
         }, trailing:
