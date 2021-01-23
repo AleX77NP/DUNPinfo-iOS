@@ -67,19 +67,21 @@ struct News : View {
     }
     
     var body: some View {
-        if(self.loading) {
-            ProgressView()
-        } else {
-        if(fetcher.newNews.isEmpty) {
-            Text("Lista novosti je prazna.").font(Font.custom("Ubuntu", fixedSize: 18))
-            }
-        else {
         NavigationView{
+            if (self.loading) {
+                ProgressView().navigationTitle("Novosti")
+            }
+            else if(fetcher.newNews.isEmpty) {
+                Text("Lista novosti je prazna.").font(Font.custom("Ubuntu", fixedSize: 18)).navigationTitle("Novosti")
+                }
+            else {
         List {
+            VStack{
             NewsSearchBar(text: $text)
             ForEach(fetcher.newNews.filter {self.text.isEmpty ? true : $0.fields.naslov.lowercased().contains(text.lowercased())}, id: \.self) { novelty in
                 NewsListItem(item: novelty, color: lista.first(where: {$0.tip == novelty.fields.tip})!.boja)
             }
+          }
         }.navigationTitle("Novosti")
         .listStyle(InsetListStyle())
         .navigationBarItems(leading: Text("Osveži").onTapGesture {
@@ -90,8 +92,10 @@ struct News : View {
             Image("filters").resizable().frame(width: 12, height: 12)
             }.onTapGesture {
             self.isOpen.toggle()
+                
         }
        )
+      }
      }
         .sheet(isPresented: $isOpen, content: {
         FilterModal(isPresented: $isOpen, chosenType: {
@@ -106,8 +110,8 @@ struct News : View {
       })
     }
    }
- }
-}
+
+
 
 struct NewsColor {
     var tip: String
