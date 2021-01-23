@@ -39,7 +39,7 @@ struct Settings : View {
                   //  .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
                     Spacer()
                 }
-                Text("Ovde možete da izmenite podešavanja za departmane za koje primate obaveštenja.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.primary)
+                Text("Ovde možete da izmenite podešavanja za departmane za koje primate obaveštenja i ostale tipove vesti.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.primary)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(Color.primary, lineWidth: 2)
@@ -75,7 +75,7 @@ struct Settings : View {
                   //  .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
                     Spacer()
                 }
-                Text("Ovde možete da izmenite podešavanja za smerove za koje primate obaveštenja.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.primary)
+                Text("Ovde možete da izmenite podešavanja za studijske programe za koje primate obaveštenja i ostale tipove vesti.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.primary)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(Color.primary, lineWidth: 2)
@@ -111,7 +111,7 @@ struct Settings : View {
                    // .shadow(color: Color(hex: 0x5400cb), radius: 0.5)
                     Spacer()
                 }
-                Text("Ovde možete da izmenite podešavanja za tipove novosti za koje primate obaveštenja.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.primary)
+                Text("Ovde možete da izmenite podešavanja za tipove novosti za koje primate obaveštenja i vesti.").font(Font.custom("Roboto", size: 16)).padding().frame(width: UIScreen.main.bounds.width*0.90).foregroundColor(.primary)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(Color.primary, lineWidth: 2)
