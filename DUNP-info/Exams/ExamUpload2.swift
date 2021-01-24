@@ -26,8 +26,7 @@ struct ExamUpload2: View {
     func uploadImage(paramName: String, fileName: String, image: UIImage) {
         
         isUploading = true
-        let url = URL(string: "http://68.66.242.98/api/faks/ispit/") //promeni
-
+        let url = URL(string: "http://68.66.242.98/api/faks/ispit/") 
         let boundary = UUID().uuidString
         
         let parameters: [String: Any] = [

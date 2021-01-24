@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,9 @@
 		9C3A5A2A259DFC900066AA05 /* ExamsSubjectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A5A29259DFC900066AA05 /* ExamsSubjectItem.swift */; };
 		9C41BCD1255F267D00C45C5D /* FifthTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41BCD0255F267D00C45C5D /* FifthTutorial.swift */; };
 		9C41BCD4255F412A00C45C5D /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41BCD3255F412A00C45C5D /* UserInfo.swift */; };
+		9C47A55525BD8CBB0075BDBB /* FilterModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C47A55425BD8CBB0075BDBB /* FilterModal.swift */; };
+		9C47A55825BD8D6F0075BDBB /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C47A55725BD8D6F0075BDBB /* ZoomableScrollView.swift */; };
+		9C47A56025BD93D70075BDBB /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 9C47A55F25BD93D70075BDBB /* SwiftUIRefresh */; };
 		9C49F4B425AC659A0059C684 /* ExamChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C49F4B325AC659A0059C684 /* ExamChoice.swift */; };
 		9C4B80622587F29A005D4137 /* ExamsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B80612587F29A005D4137 /* ExamsData.swift */; };
 		9C4B829E25AF767E00F4318A /* GalleryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B829D25AF767E00F4318A /* GalleryPicker.swift */; };
@@ -75,6 +78,8 @@
 		9C3A5A29259DFC900066AA05 /* ExamsSubjectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsSubjectItem.swift; sourceTree = "<group>"; };
 		9C41BCD0255F267D00C45C5D /* FifthTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthTutorial.swift; sourceTree = "<group>"; };
 		9C41BCD3255F412A00C45C5D /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		9C47A55425BD8CBB0075BDBB /* FilterModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModal.swift; sourceTree = "<group>"; };
+		9C47A55725BD8D6F0075BDBB /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		9C49F4B325AC659A0059C684 /* ExamChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamChoice.swift; sourceTree = "<group>"; };
 		9C4B80612587F29A005D4137 /* ExamsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsData.swift; sourceTree = "<group>"; };
 		9C4B829D25AF767E00F4318A /* GalleryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPicker.swift; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C47A56025BD93D70075BDBB /* SwiftUIRefresh in Frameworks */,
 				8274C0CA00A0306B2A054DAA /* Pods_DUNP_info.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +252,8 @@
 				9C3A5A29259DFC900066AA05 /* ExamsSubjectItem.swift */,
 				9C31534425AB3C7D00FB80C1 /* ExamImage.swift */,
 				9C4B829D25AF767E00F4318A /* GalleryPicker.swift */,
+				9C47A55425BD8CBB0075BDBB /* FilterModal.swift */,
+				9C47A55725BD8D6F0075BDBB /* ZoomableScrollView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -284,6 +292,9 @@
 			dependencies = (
 			);
 			name = "DUNP-info";
+			packageProductDependencies = (
+				9C47A55F25BD93D70075BDBB /* SwiftUIRefresh */,
+			);
 			productName = "DUNP-info";
 			productReference = 9CA1049C25532BE9002969FE /* DUNP-info.app */;
 			productType = "com.apple.product-type.application";
@@ -311,6 +322,9 @@
 				Base,
 			);
 			mainGroup = 9CA1049325532BE9002969FE;
+			packageReferences = (
+				9C47A55E25BD93D70075BDBB /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
+			);
 			productRefGroup = 9CA1049D25532BE9002969FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -398,12 +412,14 @@
 				9C49F4B425AC659A0059C684 /* ExamChoice.swift in Sources */,
 				9C31534225AB30CC00FB80C1 /* IRItem.swift in Sources */,
 				9C41BCD4255F412A00C45C5D /* UserInfo.swift in Sources */,
+				9C47A55825BD8D6F0075BDBB /* ZoomableScrollView.swift in Sources */,
 				9C8168A12579230C00DC452D /* Settings.swift in Sources */,
 				9CD3CB57257AC6A800804EC8 /* LinkView.swift in Sources */,
 				9C5F92642562F3260079C693 /* SeventhTutorial.swift in Sources */,
 				9C3A5A24259DF8A90066AA05 /* ExamsCourses.swift in Sources */,
 				9C3A5A21259DF8690066AA05 /* ExamsCourseItem.swift in Sources */,
 				9C18057225780066003DAF4E /* CourseItem.swift in Sources */,
+				9C47A55525BD8CBB0075BDBB /* FilterModal.swift in Sources */,
 				9CDF3FA2255C0F2C00AC8109 /* TutorialView.swift in Sources */,
 				9C56D04F255D77620090BCD8 /* ForthTutorial.swift in Sources */,
 				9CC134D725608DD000C2F650 /* Student.swift in Sources */,
@@ -618,6 +634,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9C47A55E25BD93D70075BDBB /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9C47A55F25BD93D70075BDBB /* SwiftUIRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C47A55E25BD93D70075BDBB /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
+			productName = SwiftUIRefresh;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9CA1049425532BE9002969FE /* Project object */;
 }

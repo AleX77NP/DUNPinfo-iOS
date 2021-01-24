@@ -30,7 +30,7 @@ struct ExamsSubjects: View {
                }
               }
             }
-            }.accentColor(.clear)
+            }.accentColor(Color(UIColor.systemBackground))
             .navigationTitle("Predmeti")
         }
     }

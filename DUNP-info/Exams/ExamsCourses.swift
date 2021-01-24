@@ -16,7 +16,7 @@ struct ExamsCourses: View {
         VStack{
         List(self.smerovi) { smer in
             ExamsCourseItem(smer: smer)
-        }.accentColor(.clear)
+        }.accentColor(Color(UIColor.systemBackground))
         .navigationTitle("Smerovi")
         .listStyle(InsetListStyle())
             

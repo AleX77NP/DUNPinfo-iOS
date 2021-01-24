@@ -16,7 +16,7 @@ struct ExamsSubjectItem: View {
         NavigationLink(destination: ExamsDocs(predmet: predmet.predmet)){
             HStack{
                 Text(predmet.naziv_predmeta)
-                    .font(Font.custom("Roboto",fixedSize: 16)).padding().foregroundColor(Color.secondary)
+                    .font(Font.custom("Roboto",fixedSize: 16)).padding().foregroundColor(Color.primary)
                 Spacer()
             }.border(Color.gray, width: 2)
     }.buttonStyle(PlainButtonStyle()).accentColor(Color.clear)

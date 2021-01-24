@@ -21,7 +21,7 @@ struct ExamsDep : View {
             
         List(self.examsFetcher.examsDeps) { dep in
             ExamsDepItem(dep: dep)
-        }.accentColor(.clear)
+        }.accentColor(Color(UIColor.systemBackground))
         .navigationTitle("Departmani")
         .listStyle(InsetListStyle())
         }.navigationViewStyle(StackNavigationViewStyle())

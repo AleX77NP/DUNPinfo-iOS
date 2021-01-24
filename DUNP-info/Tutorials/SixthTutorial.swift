@@ -10,10 +10,10 @@ import SwiftUI
 
 struct SixthTutorial: View {
     @State var email: String = getMe() as! String
-    @State var password: String = getPwd() as! String
+    @State var name: String = getPwd() as! String
     
     var disableForm: Bool {
-        email.count < 5 || password.count < 6 || !email.contains("@")
+        email.count < 5 || name.count < 5 || !email.contains("@")
     }
     var body: some View{
         VStack{
@@ -29,11 +29,11 @@ struct SixthTutorial: View {
                 }
                 Text("Email adresa:").bold()
                 TextField("Unesite email adresu", text: $email)
-                Text("Lozinka:").bold()
-                SecureField("Unesite lozinku", text: $password)
+                Text("Ime i prezime:").bold()
+                TextField("Unesite ime i prezime", text: $name)
                 Button(action:
                         {
-                            saveUserInfo(username: email, password: password)
+                            saveUserInfo(username: email, password: name)
                             
                         }
                 ) {
@@ -45,7 +45,7 @@ struct SixthTutorial: View {
                 }.padding().buttonStyle(PlainButtonStyle()).disabled(disableForm)
                 
                 VStack{
-                    Text("Neophodno je da unesete validnu adresu e-pošte, koja se koristi kao identifikator za notifikacije koje ćete dobijati. Lozinka je proizvoljna i biće bezbedno smeštena u bazi.").font(Font.custom("Roboto", size: 15)).foregroundColor(.primary).padding()
+                    Text("Neophodno je da unesete validnu adresu e-pošte, koja se koristi kao identifikator za notifikacije koje ćete dobijati.").font(Font.custom("Roboto", size: 15)).foregroundColor(.primary).padding()
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(Color.primary, lineWidth: 2)
