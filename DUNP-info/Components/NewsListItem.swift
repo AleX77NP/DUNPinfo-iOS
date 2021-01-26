@@ -18,11 +18,11 @@ struct NewsListItem: View {
             Image(item.fields.tip == "vesti" ? "novosti" : item.fields.tip.replacingOccurrences(of: " ", with: "_")).resizable().frame(width: 25, height: 25)
                 .padding().foregroundColor(color)
                 VStack(alignment: .leading){
-                    Text(item.fields.naslov) .lineLimit(2).font(Font.custom("Ubuntu", size: 14))
+                    Text(item.fields.naslov.replacingOccurrences(of: "departman", with: "")) .lineLimit(2).font(Font.custom("Ubuntu", size: 14))
                     Text(item.fields.datum.prefix(16).replacingOccurrences(of: "T", with:" ")).padding(.top,10).foregroundColor(Color.gray).font(Font.custom("Roboto", size: 14))
-                }
+            }
+          }
         }
-      }
     }
 }
 

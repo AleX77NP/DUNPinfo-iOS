@@ -36,7 +36,7 @@ struct ExamUpload: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Dodajte fotografije iz galerije ili kamere. Definišite redoled kojim će se slike prikazati ili obrišite sliku.").font(Font.custom("Roboto", size: 16)).foregroundColor(.primary).padding()
+            Text("Dodajte fotografije iz galerije ili kamere. Definišite redosled kojim će se slike prikazati ili obrišite sliku.").font(Font.custom("Roboto", size: 16)).foregroundColor(.primary).padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 5)
                         .stroke(Color.primary, lineWidth: 2)

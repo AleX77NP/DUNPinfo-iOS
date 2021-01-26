@@ -214,5 +214,6 @@ var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).upperca
                 blue: b,
                 alpha: a
     )
-} }
+  }
+}
 

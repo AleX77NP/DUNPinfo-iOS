@@ -84,7 +84,7 @@ struct News : View {
             else if(fetcher.newNews.isEmpty) {
                 Text("Lista novosti je prazna.").font(Font.custom("Ubuntu", fixedSize: 18)).navigationTitle("Novosti")
                 }
-            else {
+        else {
         List {
             NewsSearchBar(text: $text)
             ForEach(fetcher.newNews.filter {self.text.isEmpty ? true : $0.fields.naslov.lowercased().contains(text.lowercased())}, id: \.self) { novelty in
@@ -95,22 +95,18 @@ struct News : View {
                     fetchNews(isFirst: false)
             }
         })
-        .navigationTitle("Novosti")
         .listStyle(InsetListStyle())
-        .navigationBarItems(leading: Text("Forum").onTapGesture {
-            //self.fetchNews()
-            print("forum")
-        }, trailing:
+        .navigationTitle("Novosti")
+        .navigationBarItems(trailing:
             HStack{
             Text("Filter")
             Image("filters").resizable().frame(width: 12, height: 12)
             }.onTapGesture {
             self.isOpen.toggle()
-                
         }
        )
       }
-     }
+        }.navigationViewStyle(StackNavigationViewStyle())
         .sheet(isPresented: $isOpen, content: {
         FilterModal(isPresented: $isOpen, chosenType: {
             tip in
