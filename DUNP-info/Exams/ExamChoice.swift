@@ -117,7 +117,7 @@ struct ExamChoice: View {
             
               }
                 
-            }.navigationTitle("Dodaj ispitni rok").navigationBarTitleDisplayMode(.inline)
+            }.navigationTitle("Dodaj ispitni rok").foregroundColor(.blue).navigationBarTitleDisplayMode(.inline)
         }.navigationViewStyle(StackNavigationViewStyle()).alert(isPresented: $showAlert) {
             Alert(title: Text("Podaci"), message: Text("Morate odabrati predmet kako biste nastavili dalje."))
       }

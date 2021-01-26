@@ -17,7 +17,7 @@ struct FifthTutorial: View {
     @ObservedObject var settings: finishedTutorial = .shared
     
     init() {
-        print(vratiPretplate())
+      //  print(vratiPretplate())
         sviTipovi.tipovi =  sviTipovi.tipovi.map{ (vest : Vest) -> Vest  in
             var mutable  = vest
             if(subs.subs.contains(mutable.naziv)) {

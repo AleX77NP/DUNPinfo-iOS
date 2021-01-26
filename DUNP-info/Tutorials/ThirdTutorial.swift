@@ -15,7 +15,7 @@ struct ThirdTutorial: View {
     
     var deps: [Department] = getAllDepartments()
     init() {
-        print("departmani")
+       // print("departmani")
 
     }
     var body: some View{

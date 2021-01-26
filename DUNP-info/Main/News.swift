@@ -99,8 +99,8 @@ struct News : View {
         .navigationTitle("Novosti")
         .navigationBarItems(trailing:
             HStack{
-            Text("Filter")
-            Image("filters").resizable().frame(width: 12, height: 12)
+                Text("Filter").foregroundColor(.blue)
+                Image("filters").resizable().frame(width: 12, height: 12).foregroundColor(.blue)
             }.onTapGesture {
             self.isOpen.toggle()
         }

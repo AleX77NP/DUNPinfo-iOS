@@ -18,7 +18,7 @@ struct IRItem: View {
         NavigationLink(destination: ExamImage(slika: slika)){
             HStack{
             Text(rok + " " + String(godina))
-                .font(Font.custom("Roboto",fixedSize: 14)).padding().foregroundColor(Color.primary)
+                .font(Font.custom("Roboto",fixedSize: 14)).padding().foregroundColor(.blue)
                 Spacer()
             }.border(Color.gray, width: 2)
         }.buttonStyle(PlainButtonStyle()).accentColor(Color.clear)
