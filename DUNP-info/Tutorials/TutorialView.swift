@@ -103,7 +103,7 @@ struct TutorialView: View {
                             self.CurrentPage += 1
                         }
                         else {
-                            self.message = "Proverite unete podatke. Lozinka mora imati najmanje 6 karaktera. Sačuvajte podatke kako biste nastavili dalje."
+                            self.message = "Proverite unete podatke. Sačuvajte podatke kako biste nastavili dalje."
                             self.showAlert = true
                         }
                     }
